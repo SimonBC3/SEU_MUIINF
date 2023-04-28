@@ -69,6 +69,27 @@ int _write(int file, char *ptr, int len) {
 void setAlarm(int value) {
 
 }
+
+void turnOnLeds(float value) {
+	float div = 3.3/8;
+	if (value <= div) {
+		put_leds(1);
+	} else if (value <= div*2) {
+		put_leds(3);
+	} else if (value <= div*3) {
+		put_leds(7);
+	} else if (value <= div*4) {
+		put_leds(15);
+	} else if (value <= div*5) {
+		put_leds(31);
+	} else if (value <= div*6) {
+		put_leds(63);
+	} else if (value <= div*7) {
+		put_leds(127);
+	} else {
+		put_leds(255);
+	}
+}
 /* USER CODE END 0 */
 
 /**
@@ -108,18 +129,17 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   GPIO_PinState leftButtonState = GPIO_PIN_SET;
-  GPIO_PinState rightButtonState = GPIO_PIN_RESET;
+  GPIO_PinState rightButtonState = GPIO_PIN_SET;
   int sensor = 0; //0 = LDR || 1 = NTC
-  int trigger = 10000;
   uint32_t valuePot = ConvertidorA_D(4);
   float lastPot = ((valuePot * 3.3)/4095.0);
+  float trigger = lastPot;
   while (1)
   {
 	 //Choose sensor
 	 GPIO_PinState lbCurrentState = HAL_GPIO_ReadPin(BTN2_GPIO_Port, BTN2_Pin);
 	 if(leftButtonState != lbCurrentState && lbCurrentState == GPIO_PIN_RESET) {
 		  leftButtonState = GPIO_PIN_RESET;
-		  //HAL_GPIO_WritePin(GPIOA, BUZZER_Pin, GPIO_PIN_SET);
 	 }
 
 	 if(leftButtonState != lbCurrentState && lbCurrentState == GPIO_PIN_SET) {
@@ -136,36 +156,50 @@ int main(void)
 	 //set trigger
 	 uint32_t valuePot = ConvertidorA_D(4);
 	 float currentPot = ((valuePot * 3.3)/4095.0);
-	 printf("%.2f \r\n", currentPot);
+	 printf("Value de la pooooooot %.2f \r\n", currentPot);
 	 if (currentPot > (lastPot+0.35) || currentPot < (lastPot - 0.35)) {
-		 printf("pot changed");
+		 printf("pot changed %.2f\r\n", currentPot);
 		 lastPot = currentPot;
 		 trigger = currentPot;
-		 put_leds(0);
-		 for (int i = 0; i<7; i++) {
-		 	 for(int j = 0; j<10000000; j++) {}
-		 	 turn_leds_on(currentPot);
+		 for(int i = 0; i<8;i++) {
+			 turnOnLeds(currentPot);
+			 for (int j = 0; j < 1000000; j++) {}
+			 put_leds(0);
+			 for (int j = 0; j < 1000000; j++) {}
 		 }
 	 }
 
 
 	 uint32_t valueADLum = ConvertidorA_D(0);
 	 float valueBigLum = 4096-valueADLum;
-	 float value = (valueBigLum*3.3)/4095;
+	 float lumValue = (valueBigLum*3.3)/4095;
+	 printf("Value de la luuuuuuz %.2f \r\n", lumValue);
 	 //light sensor on
 	 if (sensor == 0) {
-		 turn_leds_on(value);
+		 turnOnLeds(lumValue);
 	 } else {
 		 put_leds(0);
 	 }
 
-	 //scream
-	 if (value > trigger ) {
-		 HAL_GPIO_WritePin(GPIOA, BUZZER_Pin, GPIO_PIN_SET);
+	 //SCREAM
+	 printf("LumValue %.2f > trigger %.2f \r\n", lumValue, trigger);
+	 if (lumValue > trigger ) {
+	 	HAL_GPIO_WritePin(GPIOA, BUZZER_Pin, GPIO_PIN_SET);
 	 } else {
-		 HAL_GPIO_WritePin(GPIOA, BUZZER_Pin, GPIO_PIN_RESET);
+	 	HAL_GPIO_WritePin(GPIOA, BUZZER_Pin, GPIO_PIN_RESET);
 	 }
 
+	 //RESET SCREAM
+	 GPIO_PinState rbCurrentState = HAL_GPIO_ReadPin(BTN1_GPIO_Port, BTN1_Pin);
+	 if(rightButtonState != rbCurrentState && rbCurrentState== GPIO_PIN_RESET) {
+	 	rightButtonState = GPIO_PIN_RESET;
+	 	HAL_GPIO_WritePin(GPIOA, BUZZER_Pin, GPIO_PIN_RESET);
+	 	for (int j = 0; j < 70000000; j++) {}
+	 }
+
+	 if(rightButtonState != rbCurrentState && rbCurrentState == GPIO_PIN_SET) {
+	 	rightButtonState = GPIO_PIN_SET;
+	 }
 
 
 	 {int c;for (c = 0; c < 1000000; c++);}

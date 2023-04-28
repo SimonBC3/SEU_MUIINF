@@ -8,6 +8,7 @@
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="lastPot"/>
 			<item value="BUZ"/>
 			<item value="BU"/>
 			<item value="buzz"/>
@@ -22,7 +23,6 @@
 			<item value="HAL_GPIO_R"/>
 			<item value="HAL_GPIO"/>
 			<item value="HAL_"/>
-			<item value="READ"/>
 		</list>
 		<list key="replacehistory">
 		</list>
