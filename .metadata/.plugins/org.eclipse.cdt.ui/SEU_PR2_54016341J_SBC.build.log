@@ -1,0 +1,30 @@
+17:46:01 **** Incremental Build of configuration Debug for project SEU_PR2_54016341J_SBC ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:109:13: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  109 |   printf("%4d \r\n", valueTemp);
+      |           ~~^        ~~~~~~~~~
+      |             |        |
+      |             int      uint32_t {aka long unsigned int}
+      |           %4ld
+../Core/Src/main.c:106:6: warning: unused variable 'ct' [-Wunused-variable]
+  106 |  int ct = 0;
+      |      ^~
+arm-none-eabi-gcc -o "SEU_PR2_54016341J_SBC.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\sbrot\STM32CubeIDE\workspace_1.8.0\SEU_PR2_54016341J_SBC\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SEU_PR2_54016341J_SBC.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SEU_PR2_54016341J_SBC.elf
+ 
+arm-none-eabi-size   SEU_PR2_54016341J_SBC.elf 
+arm-none-eabi-objdump -h -S  SEU_PR2_54016341J_SBC.elf  > "SEU_PR2_54016341J_SBC.list"
+arm-none-eabi-objcopy  -O binary  SEU_PR2_54016341J_SBC.elf  "SEU_PR2_54016341J_SBC.bin"
+   text	   data	    bss	    dec	    hex	filename
+  25480	    484	   1740	  27704	   6c38	SEU_PR2_54016341J_SBC.elf
+Finished building: default.size.stdout
+ 
+Finished building: SEU_PR2_54016341J_SBC.bin
+ 
+Finished building: SEU_PR2_54016341J_SBC.list
+ 
+
+17:46:01 Build Finished. 0 errors, 2 warnings. (took 742ms)
+

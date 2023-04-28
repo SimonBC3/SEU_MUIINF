@@ -1,0 +1,10 @@
+03:54:52 **** Incremental Build of configuration Debug for project SEU_SBC_23 ****
+make -j16 all 
+arm-none-eabi-size   SEU_SBC_23.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12896	    120	   1664	  14680	   3958	SEU_SBC_23.elf
+Finished building: default.size.stdout
+ 
+
+03:54:53 Build Finished. 0 errors, 0 warnings. (took 315ms)
+

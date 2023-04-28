@@ -1,0 +1,35 @@
+18:24:40 **** Incremental Build of configuration Debug for project SEU_PR1_54016341J_SBC ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'statusLED':
+../Core/Src/main.c:116:8: warning: variable 'encendido' set but not used [-Wunused-but-set-variable]
+  116 |    int encendido;
+      |        ^~~~~~~~~
+../Core/Src/main.c:115:8: warning: unused variable 'count' [-Wunused-variable]
+  115 |    int count;
+      |        ^~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:110:17: warning: variable 'res' set but not used [-Wunused-but-set-variable]
+  110 |   GPIO_PinState res;
+      |                 ^~~
+At top level:
+../Core/Src/main.c:113:8: warning: 'statusLED' defined but not used [-Wunused-function]
+  113 |   void statusLED() {
+      |        ^~~~~~~~~
+arm-none-eabi-gcc -o "SEU_PR1_54016341J_SBC.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\sbrot\STM32CubeIDE\workspace_1.8.0\SEU_PR1_54016341J_SBC\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SEU_PR1_54016341J_SBC.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SEU_PR1_54016341J_SBC.elf
+ 
+arm-none-eabi-size   SEU_PR1_54016341J_SBC.elf 
+arm-none-eabi-objdump -h -S  SEU_PR1_54016341J_SBC.elf  > "SEU_PR1_54016341J_SBC.list"
+arm-none-eabi-objcopy  -O binary  SEU_PR1_54016341J_SBC.elf  "SEU_PR1_54016341J_SBC.bin"
+   text	   data	    bss	    dec	    hex	filename
+   7476	     20	   1636	   9132	   23ac	SEU_PR1_54016341J_SBC.elf
+Finished building: default.size.stdout
+ 
+Finished building: SEU_PR1_54016341J_SBC.bin
+Finished building: SEU_PR1_54016341J_SBC.list
+ 
+ 
+
+18:24:41 Build Finished. 0 errors, 4 warnings. (took 612ms)
+

@@ -1,0 +1,8 @@
+main.c:61:5:_write	32	static
+main.c:69:6:setAlarm	16	static
+main.c:78:5:main	80	static
+main.c:183:6:SystemClock_Config	88	static
+main.c:228:13:MX_ADC1_Init	24	static
+main.c:278:13:MX_USART2_UART_Init	8	static
+main.c:311:13:MX_GPIO_Init	48	static
+main.c:372:6:Error_Handler	4	static,ignoring_inline_asm
