@@ -1,0 +1,78 @@
+17:08:43 **** Incremental Build of configuration Debug for project SEU_EN2_SBC_54016341J2 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/comunicaciones.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/comunicaciones.d" -MT"Core/Src/comunicaciones.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/comunicaciones.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/tasks.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/tasks.d" -MT"Core/Src/tasks.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/tasks.o"
+../Core/Src/comunicaciones.c:10:10: fatal error: comunicaciones.h: No such file or directory
+   10 | #include "comunicaciones.h"
+      |          ^~~~~~~~~~~~~~~~~~
+compilation terminated.
+../Core/Src/tasks.c:3:46: error: unknown type name 'osPriority'
+    3 | unsigned portBASE_TYPE makeFreeRtosPriority (osPriority priority)
+      |                                              ^~~~~~~~~~
+../Core/Src/tasks.c: In function 'CONFIGURACION_INICIAL':
+../Core/Src/tasks.c:16:2: error: 'res_task' undeclared (first use in this function)
+   16 |  res_task=xTaskCreate(Task_HW,"HW",1024,NULL, 32,NULL);
+      |  ^~~~~~~~
+../Core/Src/tasks.c:16:2: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/tasks.c:16:11: warning: implicit declaration of function 'xTaskCreate' [-Wimplicit-function-declaration]
+   16 |  res_task=xTaskCreate(Task_HW,"HW",1024,NULL, 32,NULL);
+      |           ^~~~~~~~~~~
+../Core/Src/tasks.c:16:23: error: 'Task_HW' undeclared (first use in this function)
+   16 |  res_task=xTaskCreate(Task_HW,"HW",1024,NULL, 32,NULL);
+      |                       ^~~~~~~
+../Core/Src/tasks.c:18:6: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   18 |      printf("PANIC: Error al crear Tarea Visualizador\r\n");
+      |      ^~~~~~
+../Core/Src/tasks.c:18:6: warning: incompatible implicit declaration of built-in function 'printf'
+../Core/Src/tasks.c:2:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+    1 | #include "FreeRTOS.h"
+  +++ |+#include <stdio.h>
+    2 | 
+../Core/Src/tasks.c:19:6: warning: implicit declaration of function 'fflush' [-Wimplicit-function-declaration]
+   19 |      fflush(NULL);
+      |      ^~~~~~
+../Core/Src/tasks.c:23:23: error: 'Task_WIFI' undeclared (first use in this function)
+   23 |  res_task=xTaskCreate(Task_WIFI,"WIFI",1024,NULL, 32 ,NULL);
+      |                       ^~~~~~~~~
+../Core/Src/tasks.c:25:7: warning: incompatible implicit declaration of built-in function 'printf'
+   25 |       printf("PANIC: Error al crear Tarea Visualizador\r\n");
+      |       ^~~~~~
+../Core/Src/tasks.c:25:7: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/tasks.c: In function 'Task_HW':
+../Core/Src/tasks.c:34:3: warning: incompatible implicit declaration of built-in function 'printf'
+   34 |   printf("Estoy en tasks");
+      |   ^~~~~~
+../Core/Src/tasks.c:34:3: note: include '<stdio.h>' or provide a declaration of 'printf'
+make: *** [Core/Src/subdir.mk:46: Core/Src/comunicaciones.o] Error 1
+make: *** Waiting for unfinished jobs....
+make: *** [Core/Src/subdir.mk:46: Core/Src/tasks.o] Error 1
+../Core/Src/main.c: In function 'turnOnLeds':
+../Core/Src/main.c:99:3: warning: implicit declaration of function 'put_leds' [-Wimplicit-function-declaration]
+   99 |   put_leds(1);
+      |   ^~~~~~~~
+../Core/Src/main.c: In function 'turnOnLedsTemp':
+../Core/Src/main.c:119:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  119 |  printf(" div value %.2f\n", (initValue + (div*2)));
+      |  ^~~~~~
+../Core/Src/main.c:119:2: warning: incompatible implicit declaration of built-in function 'printf'
+../Core/Src/main.c:27:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+   26 | #include "tasks.h"
+  +++ |+#include <stdio.h>
+   27 | /* USER CODE END Includes */
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:171:3: warning: incompatible implicit declaration of built-in function 'printf'
+  171 |   printf("PRJ: %s, Date: %s\r\n", "mi proyecto", __TIME__);
+      |   ^~~~~~
+../Core/Src/main.c:171:3: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:217:23: warning: implicit declaration of function 'ConvertidorA_D' [-Wimplicit-function-declaration]
+  217 |   uint32_t valuePot = ConvertidorA_D(4);
+      |                       ^~~~~~~~~~~~~~
+../Core/Src/main.c:224:13: error: expected expression before 'void'
+  224 |    Task_HW(&void);
+      |             ^~~~
+make: *** [Core/Src/subdir.mk:46: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+
+17:08:43 Build Failed. 10 errors, 11 warnings. (took 314ms)
+

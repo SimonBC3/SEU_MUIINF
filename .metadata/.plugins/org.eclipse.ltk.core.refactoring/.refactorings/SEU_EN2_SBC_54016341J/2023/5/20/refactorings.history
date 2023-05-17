@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;SEU_EN2_SBC_54016341J/Proy_SEU_S5_23_00PROF06_PPB.ioc&apos; to &apos;SEU_EN2_SBC_54016341J.ioc&apos;" description="Rename resource &apos;Proy_SEU_S5_23_00PROF06_PPB.ioc&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Proy_SEU_S5_23_00PROF06_PPB.ioc" name="SEU_EN2_SBC_54016341J.ioc" stamp="1684347519419" updateReferences="true"/>
+</session>

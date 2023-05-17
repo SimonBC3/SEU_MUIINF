@@ -2,16 +2,22 @@
 <section name="Workbench">
 	<section name="ImportExportAction">
 		<item key="ImportExportPage.STORE_SELECTED_EXPORT_WIZARD_ID" value="org.eclipse.ui.wizards.export.ZipFile"/>
+		<item key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID" value="org.eclipse.ui.wizards.import.ExternalProject"/>
 		<list key="ImportExportPage.STORE_EXPANDED_EXPORT_CATEGORIES">
 			<item value="org.eclipse.ui.Basic"/>
 			<item value="org.eclipse.cdt.ui.exportWizardCategory"/>
 			<item value="org.eclipse.debug.ui"/>
+		</list>
+		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
+			<item value="org.eclipse.ui.Basic"/>
+			<item value="org.eclipse.cdt.ui.importWizardCategory"/>
 		</list>
 	</section>
 	<section name="ZipFileExportWizard">
 		<item key="WizardZipFileResourceExportPage1.STORE_CREATE_STRUCTURE_ID" value="true"/>
 		<item key="WizardZipFileResourceExportPage1.STORE_COMPRESS_CONTENTS_ID" value="true"/>
 		<list key="WizardZipFileResourceExportPage1.STORE_DESTINATION_NAMES_ID">
+			<item value="C:\Users\sbrot\Desktop\SEU_EN1_SBC_54016341J.zip"/>
 			<item value="C:\Users\sbrot\Desktop\SEU_PR1_54016341J_SBC.zip"/>
 		</list>
 	</section>
@@ -22,5 +28,7 @@
 		<list key="WizardFileSystemResourceExportPage1.STORE_DESTINATION_NAMES_ID">
 			<item value="C:\Users\sbrot\Desktop"/>
 		</list>
+	</section>
+	<section name="ZipFileImportWizard">
 	</section>
 </section>
