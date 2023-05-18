@@ -17,4 +17,13 @@ void put_leds(uint8_t dato);
 
 uint32_t ConvertidorA_D(uint8_t channel);
 
+int checkSensorChange();
+void setOffAlarm(float value, float trigger);
+void turnOnLedsLight(float value);
+void turnOnLedsTemp(float initValue, float currentValue);
+void lightSensorBehaviour();
+void tempSensorBehaviour();
+void restartAlarm();
+void runHW();
+
 #endif /* SRC_HW_H_ */
