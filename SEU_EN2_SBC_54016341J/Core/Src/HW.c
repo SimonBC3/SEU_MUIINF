@@ -311,7 +311,6 @@ void initializeVars()
 
 void runHW()
 {
-	printf("in HW");
 	if((valuePot == 0) && (lastPot = 0) && (tempInit == 0) && (initTempValue == 0) && (trigger == 0)) {
 		initializeVars();
 	}

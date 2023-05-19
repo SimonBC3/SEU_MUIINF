@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="ESP"/>
+		<item key="selection" value="USER CODE BEGIN RTOS_THREADS"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="ESP"/>
-			<item value="task"/>
-			<item value="huart2"/>
-			<item value="huart"/>
-			<item value="ESP8266_RESET_GPIO_Port"/>
-			<item value="Task"/>
-			<item value="HAL_UART_Receive_DMA"/>
-			<item value="ESP8266_"/>
-			<item value="ESP8266_SET"/>
+			<item value="USER CODE BEGIN RTOS_THREADS"/>
+			<item value="THREADS"/>
+			<item value="THREAD"/>
+			<item value="THRE"/>
+			<item value="USER CO"/>
+			<item value="RTOS"/>
 			<item value="ESP8266"/>
-			<item value="lastPot"/>
-			<item value="BUZ"/>
-			<item value="BU"/>
-			<item value="buzz"/>
-			<item value="lbCurrentState"/>
+			<item value="ESP8226"/>
+			<item value="ESP"/>
+			<item value="SSID_PASS"/>
+			<item value="PULS"/>
+			<item value="GPIO"/>
+			<item value="BUZZER"/>
+			<item value="LED1"/>
+			<item value="task"/>
 		</list>
 		<list key="replacehistory">
 		</list>

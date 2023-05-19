@@ -12,15 +12,16 @@
 void Task_HW( void *pvParameters ) {
 	for(;;)
 	  {
-		printf("in HWTask");
+		printf("startHW\n\r");
 		runHW();
+		{int c;for (c = 0; c < 1000000; c++);}
 	    osDelay(1);
+	    printf("endHW\n\r");
 	  }
 }
 void Task_WIFI( void *pvParameters ) {
 	for(;;)
 	  {
-
 		//ESP8266_Boot();
 	    osDelay(1);
 	  }
