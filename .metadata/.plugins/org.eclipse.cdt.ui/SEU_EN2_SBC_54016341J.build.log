@@ -1,10 +1,44 @@
-20:37:55 **** Incremental Build of configuration Debug for project SEU_EN2_SBC_54016341J ****
+18:46:55 **** Incremental Build of configuration Debug for project SEU_EN2_SBC_54016341J ****
 make -j16 all 
+arm-none-eabi-gcc "../Core/Src/tasks.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG '-DPASCU_PRJ="SEU_EN2_SBC_54016341J.elf"' -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/tasks.d" -MT"Core/Src/tasks.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/tasks.o"
+../Core/Src/tasks.c: In function 'Task_HW':
+../Core/Src/tasks.c:15:3: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   15 |   printf("in Task");
+      |   ^~~~~~
+../Core/Src/tasks.c:15:3: warning: incompatible implicit declaration of built-in function 'printf'
+../Core/Src/tasks.c:10:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+    9 | #include "HW.h"
+  +++ |+#include <stdio.h>
+   10 | 
+../Core/Src/tasks.c:17:6: warning: implicit declaration of function 'osDelay' [-Wimplicit-function-declaration]
+   17 |      osDelay(1);
+      |      ^~~~~~~
+../Core/Src/tasks.c: In function 'CONFIGURACION_INICIAL':
+../Core/Src/tasks.c:42:11: warning: implicit declaration of function 'xTaskCreate' [-Wimplicit-function-declaration]
+   42 |  res_task=xTaskCreate(Task_HW,"HW",1024,NULL,NORMAL_PRIORITY,NULL);
+      |           ^~~~~~~~~~~
+../Core/Src/tasks.c:44:6: warning: incompatible implicit declaration of built-in function 'printf'
+   44 |      printf("PANIC: Error al crear Tarea Visualizador\r\n");
+      |      ^~~~~~
+../Core/Src/tasks.c:44:6: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/tasks.c:45:6: warning: implicit declaration of function 'fflush' [-Wimplicit-function-declaration]
+   45 |      fflush(NULL);
+      |      ^~~~~~
+../Core/Src/tasks.c:51:7: warning: incompatible implicit declaration of built-in function 'printf'
+   51 |       printf("PANIC: Error al crear Tarea Visualizador\r\n");
+      |       ^~~~~~
+../Core/Src/tasks.c:51:7: note: include '<stdio.h>' or provide a declaration of 'printf'
+arm-none-eabi-gcc -o "SEU_EN2_SBC_54016341J.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\sbrot\STM32CubeIDE\workspace_1.8.0\SEU_EN2_SBC_54016341J\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SEU_EN2_SBC_54016341J.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SEU_EN2_SBC_54016341J.elf
+ 
 arm-none-eabi-size   SEU_EN2_SBC_54016341J.elf 
+arm-none-eabi-objdump -h -S  SEU_EN2_SBC_54016341J.elf  > "SEU_EN2_SBC_54016341J.list"
    text	   data	    bss	    dec	    hex	filename
-  41920	    488	   9776	  52184	   cbd8	SEU_EN2_SBC_54016341J.elf
+  37308	    488	   5680	  43476	   a9d4	SEU_EN2_SBC_54016341J.elf
 Finished building: default.size.stdout
  
+Finished building: SEU_EN2_SBC_54016341J.list
+ 
 
-20:37:55 Build Finished. 0 errors, 0 warnings. (took 329ms)
+18:46:56 Build Finished. 0 errors, 7 warnings. (took 757ms)
 

@@ -11,11 +11,11 @@
 GPIO_PinState leftButtonState = GPIO_PIN_SET;
 GPIO_PinState rightButtonState = GPIO_PIN_SET;
 int sensorValue = 0; // 0 = LDR || 1 = NTC
-uint32_t valuePot = ConvertidorA_D(4);
-float lastPot = ((valuePot * 3.3) / 4095.0);
-uint32_t tempInit = ConvertidorA_D(1);
-float initTempValue = ((4096 - tempInit) * 3.3) / 4095;
-float trigger = lastPot;
+uint32_t valuePot = 0;
+float lastPot = 0;
+uint32_t tempInit = 0;
+float initTempValue = 0;
+float trigger = 0;
 
 void put_leds(uint8_t dato)
 {
@@ -42,9 +42,9 @@ void put_leds(uint8_t dato)
 	else
 		HAL_GPIO_WritePin(GPIOB, LED5_Pin, GPIO_PIN_RESET);
 	if (dato & 0x20)
-		HAL_GPIO_WritePin(GPIOA, LED6_Pin, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(LED6_GPIO_Port, LED6_Pin, GPIO_PIN_SET);
 	else
-		HAL_GPIO_WritePin(GPIOA, LED6_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(LED6_GPIO_Port, LED6_Pin, GPIO_PIN_RESET);
 	if (dato & 0x40)
 		HAL_GPIO_WritePin(GPIOB, LED7_Pin, GPIO_PIN_SET);
 	else
@@ -127,7 +127,7 @@ uint32_t ConvertidorA_D(uint8_t channel)
 
 int checkSensorChange()
 {
-	GPIO_PinState leftButtonCurrentState = HAL_GPIO_ReadPin(BTN2_GPIO_Port, BTN2_Pin);
+	GPIO_PinState leftButtonCurrentState = HAL_GPIO_ReadPin(PULSADOR2_GPIO_Port, PULSADOR2_Pin);
 	if (leftButtonState != leftButtonCurrentState && leftButtonCurrentState == GPIO_PIN_RESET)
 	{
 		leftButtonState = GPIO_PIN_RESET;
@@ -284,7 +284,7 @@ void tempSensorBehaviour()
 
 void restartAlarm()
 {
-	GPIO_PinState rbCurrentState = HAL_GPIO_ReadPin(BTN1_GPIO_Port, BTN1_Pin);
+	GPIO_PinState rbCurrentState = HAL_GPIO_ReadPin(PULSADOR1_GPIO_Port, PULSADOR1_Pin);
 	if (rightButtonState != rbCurrentState && rbCurrentState == GPIO_PIN_RESET)
 	{
 		rightButtonState = GPIO_PIN_RESET;
@@ -300,8 +300,21 @@ void restartAlarm()
 	}
 }
 
+void initializeVars()
+{
+	uint32_t valuePot = ConvertidorA_D(4);
+	float lastPot = ((valuePot * 3.3) / 4095.0);
+	uint32_t tempInit = ConvertidorA_D(1);
+	float initTempValue = ((4096 - tempInit) * 3.3) / 4095;
+	float trigger = lastPot;
+}
+
 void runHW()
 {
+	printf("in HW");
+	if((valuePot == 0) && (lastPot = 0) && (tempInit == 0) && (initTempValue == 0) && (trigger == 0)) {
+		initializeVars();
+	}
 	checkSensorChange();
 	lightSensorBehaviour();
 	tempSensorBehaviour();

@@ -115,9 +115,9 @@ int main(void)
   MX_ADC1_Init();
   /* USER CODE BEGIN 2 */
 
-  printf (PASCU_PRJ " at "__TIME__ "\r\n");
+  printf ("SBC_PRJ at "  __TIME__ "\r\n");
 
-  ESP8266_Boot();
+  //ESP8266_Boot();
   //ESP8266_RESET();
 
   /* USER CODE END 2 */
@@ -371,14 +371,14 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(ESP8266_RESET_GPIO_Port, ESP8266_RESET_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, D8_Pin|Buzzer_Pin|D3_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, LED8_Pin|BUZZER_Pin|LED3_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(D6_GPIO_Port, D6_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(LED6_GPIO_Port, LED6_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, D7_Pin|D2_Pin|D5_Pin|D1_Pin
-                          |D4_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, LED7_Pin|LED2_Pin|LED5_Pin|LED1_Pin
+                          |LED4_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin : B1_Pin */
   GPIO_InitStruct.Pin = B1_Pin;
@@ -393,24 +393,24 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
   HAL_GPIO_Init(ESP8266_RESET_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : D8_Pin Buzzer_Pin D3_Pin */
-  GPIO_InitStruct.Pin = D8_Pin|Buzzer_Pin|D3_Pin;
+  /*Configure GPIO pins : LED8_Pin BUZZER_Pin LED3_Pin */
+  GPIO_InitStruct.Pin = LED8_Pin|BUZZER_Pin|LED3_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : D6_Pin */
-  GPIO_InitStruct.Pin = D6_Pin;
+  /*Configure GPIO pin : LED6_Pin */
+  GPIO_InitStruct.Pin = LED6_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
-  HAL_GPIO_Init(D6_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(LED6_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : D7_Pin D2_Pin D5_Pin D1_Pin
-                           D4_Pin */
-  GPIO_InitStruct.Pin = D7_Pin|D2_Pin|D5_Pin|D1_Pin
-                          |D4_Pin;
+  /*Configure GPIO pins : LED7_Pin LED2_Pin LED5_Pin LED1_Pin
+                           LED4_Pin */
+  GPIO_InitStruct.Pin = LED7_Pin|LED2_Pin|LED5_Pin|LED1_Pin
+                          |LED4_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;

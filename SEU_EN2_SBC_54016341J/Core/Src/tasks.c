@@ -6,18 +6,22 @@
  */
 
 #include "tasks.h"
+#include "HW.h"
 
 
 void Task_HW( void *pvParameters ) {
 	for(;;)
 	  {
+		printf("in HWTask");
+		runHW();
 	    osDelay(1);
 	  }
 }
 void Task_WIFI( void *pvParameters ) {
 	for(;;)
 	  {
-		ESP8266_Boot();
+
+		//ESP8266_Boot();
 	    osDelay(1);
 	  }
 }

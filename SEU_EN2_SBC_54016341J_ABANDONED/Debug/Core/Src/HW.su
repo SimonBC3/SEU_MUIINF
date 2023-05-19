@@ -1,3 +1,0 @@
-../Core/Src/HW.c:10:6:put_leds	16	static
-../Core/Src/HW.c:51:6:pot_leds	16	static
-../Core/Src/HW.c:69:10:ConvertidorA_D	40	static

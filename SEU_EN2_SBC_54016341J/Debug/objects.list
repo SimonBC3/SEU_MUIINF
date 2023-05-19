@@ -1,3 +1,4 @@
+"./Core/Src/HW.o"
 "./Core/Src/comunicaciones.o"
 "./Core/Src/freertos.o"
 "./Core/Src/main.o"
