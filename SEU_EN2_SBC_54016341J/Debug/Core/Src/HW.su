@@ -9,4 +9,4 @@
 ../Core/Src/HW.c:271:6:tempSensorBehaviour	40	static
 ../Core/Src/HW.c:285:6:restartAlarm	16	static
 ../Core/Src/HW.c:303:6:initializeVars	32	static
-../Core/Src/HW.c:312:6:runHW	8	static
+../Core/Src/HW.c:312:6:runHW	112	static

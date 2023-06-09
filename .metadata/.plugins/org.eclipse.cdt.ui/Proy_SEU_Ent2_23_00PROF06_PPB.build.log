@@ -1,0 +1,16 @@
+11:15:24 **** Incremental Build of configuration Debug for project Proy_SEU_Ent2_23_00PROF06_PPB ****
+make -j16 all 
+arm-none-eabi-gcc -o "Proy_SEU_Ent2_23_00PROF06_PPB.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\sbrot\STM32CubeIDE\workspace_1.8.0\Proy_SEU_Ent2_23_00PROF06_PPB\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Proy_SEU_Ent2_23_00PROF06_PPB.map" -Wl,--gc-sections -static  -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Proy_SEU_Ent2_23_00PROF06_PPB.elf
+ 
+arm-none-eabi-size   Proy_SEU_Ent2_23_00PROF06_PPB.elf 
+arm-none-eabi-objdump -h -S  Proy_SEU_Ent2_23_00PROF06_PPB.elf  > "Proy_SEU_Ent2_23_00PROF06_PPB.list"
+   text	   data	    bss	    dec	    hex	filename
+  68420	   2520	  96000	 166940	  28c1c	Proy_SEU_Ent2_23_00PROF06_PPB.elf
+Finished building: default.size.stdout
+ 
+Finished building: Proy_SEU_Ent2_23_00PROF06_PPB.list
+ 
+
+11:15:25 Build Finished. 0 errors, 0 warnings. (took 900ms)
+

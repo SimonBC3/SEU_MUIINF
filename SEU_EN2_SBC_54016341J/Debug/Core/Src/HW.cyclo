@@ -9,4 +9,4 @@ HW.c:239:6:lightSensorBehaviour	6
 HW.c:271:6:tempSensorBehaviour	1
 HW.c:285:6:restartAlarm	6
 HW.c:303:6:initializeVars	1
-HW.c:312:6:runHW	6
+HW.c:312:6:runHW	19

@@ -1,0 +1,13 @@
+../Core/Src/utility.c:26:7:map	32	static
+../Core/Src/utility.c:30:24:makeFreeRtosPriority	24	static
+../Core/Src/utility.c:41:5:_write	32	static
+../Core/Src/utility.c:58:6:cleanResponse	48	static
+../Core/Src/utility.c:105:6:pon_Nivel	32	static
+../Core/Src/utility.c:149:10:BUFF_is_empty	16	static
+../Core/Src/utility.c:153:10:BUFF_is_full	16	static
+../Core/Src/utility.c:157:10:BUFF_inserta	16	static
+../Core/Src/utility.c:167:10:BUFF_extrae	16	static
+../Core/Src/utility.c:179:10:BUFF_extrae_prot	24	static
+../Core/Src/utility.c:195:10:BUFF_inserta_prot	24	static
+../Core/Src/utility.c:212:10:BUFF_inserta_cad	32	static
+../Core/Src/utility.c:247:17:bufferCreat	24	static

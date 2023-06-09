@@ -1,0 +1,17 @@
+/*
+ * Tasksend.h
+ *
+ *  Created on: 9 jun. 2023
+ *      Author: sbrot
+ */
+
+#ifndef SRC_TASKSEND_H_
+#define SRC_TASKSEND_H_
+
+class Task__send {
+public:
+	Task__send();
+	virtual ~Task__send();
+};
+
+#endif /* SRC_TASKSEND_H_ */

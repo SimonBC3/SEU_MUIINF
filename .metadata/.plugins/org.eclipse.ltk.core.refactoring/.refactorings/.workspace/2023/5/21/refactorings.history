@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;SEU_EN2_SBC_54016341J/Core/Src/WIFI.c&apos;" deleteContents="false" description="Delete resource &apos;SEU_EN2_SBC_54016341J/Core/Src/WIFI.c&apos;" element1="/SEU_EN2_SBC_54016341J/Core/Src/WIFI.c" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1684941675571"/>
+</session>

@@ -1,0 +1,3 @@
+comunicaciones.c:13:5:_write	2
+comunicaciones.c:27:6:ESP8266_RESET	4
+comunicaciones.c:56:6:ESP8266_Boot	17

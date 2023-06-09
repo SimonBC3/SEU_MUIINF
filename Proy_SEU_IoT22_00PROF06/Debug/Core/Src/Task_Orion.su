@@ -1,0 +1,5 @@
+../Core/Src/Task_Orion.c:16:5:Task_Orion_TimeOut	32	static
+../Core/Src/Task_Orion.c:64:6:Task_Orion	40	static
+../Core/Src/Task_Orion.c:206:6:ESP8266_RESET	16	static
+../Core/Src/Task_Orion.c:222:6:ESP8266_TEST	16	static
+../Core/Src/Task_Orion.c:247:6:ESP8266_Boot	16	static

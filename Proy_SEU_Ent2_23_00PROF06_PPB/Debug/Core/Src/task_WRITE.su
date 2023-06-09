@@ -1,0 +1,2 @@
+../Core/Src/task_WRITE.c:25:6:Task_WRITE_init	24	static
+../Core/Src/task_WRITE.c:40:6:Task_WRITE	32	static

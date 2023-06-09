@@ -1,0 +1,9 @@
+../Core/Src/Task_HW.c:23:6:Task_HW	152	static
+../Core/Src/Task_HW.c:233:6:print_bufferln	32	static
+../Core/Src/Task_HW.c:242:6:print_buffer	32	static
+../Core/Src/Task_HW.c:256:6:test_function	128	static
+../Core/Src/Task_HW.c:335:7:local_setpoint	104	static
+../Core/Src/Task_HW.c:364:6:local_fase_2	8	static
+../Core/Src/Task_HW.c:383:7:local_operativa	104	static
+../Core/Src/Task_HW.c:414:6:clon	144	static
+../Core/Src/Task_HW.c:456:6:conectado	144	static

@@ -1,38 +1,10 @@
-20:18:22 **** Incremental Build of configuration Debug for project SEU_EN1_SBC_54016341J ****
+18:34:03 **** Incremental Build of configuration Debug for project SEU_EN1_SBC_54016341J ****
 make -j16 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'turnOnLeds':
-../Core/Src/main.c:80:3: warning: implicit declaration of function 'put_leds' [-Wimplicit-function-declaration]
-   80 |   put_leds(1);
-      |   ^~~~~~~~
-../Core/Src/main.c: In function 'turnOnLedsTemp':
-../Core/Src/main.c:100:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
-  100 |  printf(" div value %.2f\n", (initValue + (div*2)));
-      |  ^~~~~~
-../Core/Src/main.c:100:2: warning: incompatible implicit declaration of built-in function 'printf'
-../Core/Src/main.c:21:1: note: include '<stdio.h>' or provide a declaration of 'printf'
-   20 | #include "main.h"
-  +++ |+#include <stdio.h>
-   21 | 
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:152:3: warning: incompatible implicit declaration of built-in function 'printf'
-  152 |   printf("PRJ: %s, Date: %s\r\n", "mi proyecto", __TIME__);
-      |   ^~~~~~
-../Core/Src/main.c:152:3: note: include '<stdio.h>' or provide a declaration of 'printf'
-../Core/Src/main.c:160:23: warning: implicit declaration of function 'ConvertidorA_D' [-Wimplicit-function-declaration]
-  160 |   uint32_t valuePot = ConvertidorA_D(4);
-      |                       ^~~~~~~~~~~~~~
-arm-none-eabi-gcc -o "SEU_EN1_SBC_54016341J.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\sbrot\STM32CubeIDE\workspace_1.8.0\SEU_EN1_SBC_54016341J\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SEU_EN1_SBC_54016341J.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: SEU_EN1_SBC_54016341J.elf
- 
 arm-none-eabi-size   SEU_EN1_SBC_54016341J.elf 
-arm-none-eabi-objdump -h -S  SEU_EN1_SBC_54016341J.elf  > "SEU_EN1_SBC_54016341J.list"
    text	   data	    bss	    dec	    hex	filename
-  28008	    484	   1732	  30224	   7610	SEU_EN1_SBC_54016341J.elf
+  39236	    488	  20504	  60228	   eb44	SEU_EN1_SBC_54016341J.elf
 Finished building: default.size.stdout
  
-Finished building: SEU_EN1_SBC_54016341J.list
- 
 
-20:18:23 Build Finished. 0 errors, 5 warnings. (took 1s.106ms)
+18:34:03 Build Finished. 0 errors, 0 warnings. (took 333ms)
 

@@ -1,0 +1,2 @@
+../Core/Src/tareas.c:128:6:ESP8266_CONFIGURACION_INICIAL	24	static
+../Core/Src/tareas.c:271:6:ESP8266_Task_Estresador	24	static

@@ -1,0 +1,9 @@
+Task_HW.c:23:6:Task_HW	35
+Task_HW.c:233:6:print_bufferln	1
+Task_HW.c:242:6:print_buffer	1
+Task_HW.c:256:6:test_function	10
+Task_HW.c:335:7:local_setpoint	3
+Task_HW.c:364:6:local_fase_2	3
+Task_HW.c:383:7:local_operativa	3
+Task_HW.c:414:6:clon	3
+Task_HW.c:456:6:conectado	3

@@ -1,0 +1,8 @@
+utility_buff.c:6:10:BUFF_is_empty	1
+utility_buff.c:10:10:BUFF_is_full	1
+utility_buff.c:14:10:BUFF_inserta	2
+utility_buff.c:24:10:BUFF_extrae	2
+utility_buff.c:36:10:BUFF_extrae_prot	4
+utility_buff.c:52:10:BUFF_inserta_prot	4
+utility_buff.c:69:10:BUFF_inserta_cad	3
+utility_buff.c:104:17:bufferCreat	4

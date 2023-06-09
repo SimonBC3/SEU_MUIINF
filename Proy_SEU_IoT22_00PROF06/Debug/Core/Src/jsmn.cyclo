@@ -1,0 +1,9 @@
+jsmn.c:8:15:strcpy_p	2
+jsmn.c:24:19:jsmn_alloc_token	2
+jsmn.c:42:13:jsmn_fill_token	1
+jsmn.c:53:12:jsmn_parse_primitive	15
+jsmn.c:102:12:jsmn_parse_string	23
+jsmn.c:169:5:jsmn_parse	49
+jsmn.c:327:6:jsmn_init	1
+jsmn.c:336:12:dump	13
+jsmn.c:429:5:json_search	2

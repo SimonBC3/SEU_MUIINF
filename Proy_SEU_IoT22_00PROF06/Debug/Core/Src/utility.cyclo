@@ -1,0 +1,13 @@
+utility.c:26:7:map	1
+utility.c:30:24:makeFreeRtosPriority	2
+utility.c:41:5:_write	2
+utility.c:58:6:cleanResponse	8
+utility.c:105:6:pon_Nivel	6
+utility.c:149:10:BUFF_is_empty	1
+utility.c:153:10:BUFF_is_full	1
+utility.c:157:10:BUFF_inserta	2
+utility.c:167:10:BUFF_extrae	2
+utility.c:179:10:BUFF_extrae_prot	4
+utility.c:195:10:BUFF_inserta_prot	4
+utility.c:212:10:BUFF_inserta_cad	3
+utility.c:247:17:bufferCreat	4

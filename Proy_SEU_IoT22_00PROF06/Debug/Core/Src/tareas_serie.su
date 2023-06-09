@@ -1,0 +1,3 @@
+tareas_serie.c:28:6:serie_Init_FreeRTOS	24	static
+tareas_serie.c:72:6:Task_Send	136	static
+tareas_serie.c:89:6:Task_Receive	168	static

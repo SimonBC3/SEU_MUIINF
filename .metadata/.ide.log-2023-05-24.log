@@ -1,0 +1,136 @@
+2023-05-24 17:13:58,192 [INFO] Activator:176 - 
+
+
+2023-05-24 17:13:58,192 [INFO] Activator:177 - !SESSION log4j initialized
+2023-05-24 17:14:05,803 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
+2023-05-24 17:14:31,175 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+2023-05-24 17:14:31,191 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] SLF4J: Defaulting to no-operation (NOP) logger implementation
+2023-05-24 17:14:31,191 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+2023-05-24 20:47:21,962 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:47:21,962 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:47:22,934 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:47:22,934 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:47:23,929 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:47:23,929 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:47:24,935 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:47:24,935 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:47:25,943 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:47:25,943 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:47:26,934 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:47:26,934 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:47:27,945 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:47:27,945 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:47:28,936 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:47:28,936 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:47:29,944 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:47:29,944 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:47:30,938 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:47:30,938 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:47:31,933 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:47:31,933 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:47:32,940 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:47:32,940 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:47:33,934 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:47:33,934 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:47:34,942 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:47:34,942 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:47:35,934 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:47:35,934 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:47:36,941 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:47:36,941 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:47:37,943 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:47:37,943 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:47:38,945 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:47:38,945 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:47:39,938 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:47:39,938 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:47:40,945 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:47:40,945 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:47:41,940 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:47:41,940 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:47:42,938 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:47:42,938 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:47:43,941 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:47:43,941 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:47:44,943 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:47:44,943 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:47:45,934 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:47:45,934 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:47:46,939 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:47:46,939 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:47:47,934 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:47:47,934 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:47:48,937 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:47:48,937 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:47:49,936 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:47:49,936 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:47:50,944 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:47:50,944 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:47:51,937 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:47:51,937 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:47:52,931 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:47:52,931 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:47:53,939 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:47:53,939 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:47:54,940 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:47:54,940 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:47:55,942 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:47:55,942 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:47:56,935 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:47:56,935 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:47:57,929 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:47:57,929 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:47:58,937 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:47:58,937 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:47:59,934 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:47:59,934 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:48:00,947 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:48:00,947 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:48:01,933 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:48:01,933 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:48:02,942 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:48:02,942 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:48:03,940 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:48:03,940 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:48:04,945 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:48:04,945 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:48:05,939 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:48:05,939 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:48:06,935 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:48:06,935 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:48:07,944 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:48:07,944 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:48:08,932 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:48:08,932 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:48:09,950 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:48:09,951 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:48:10,933 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:48:10,933 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:48:11,959 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:48:11,959 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:48:12,936 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:48:12,936 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:48:13,931 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:48:13,931 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:48:14,940 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:48:14,940 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:48:15,936 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:48:15,936 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:48:16,938 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:48:16,938 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:48:17,939 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:48:17,939 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:48:18,932 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:48:18,932 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:48:19,942 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:48:19,942 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:48:20,936 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:48:20,936 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:48:21,943 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:48:21,943 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:48:22,935 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:48:22,935 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:48:23,936 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:48:23,937 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2023-05-24 20:48:24,947 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] [Fatal Error] :1:1: Final de archivo prematuro.
+2023-05-24 20:48:24,948 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
