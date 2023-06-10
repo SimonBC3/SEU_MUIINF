@@ -30,8 +30,8 @@
 #define FREERTOS_5SEG		(5000/portTICK_PERIOD_MS)
 
 // Orion Context IoT name
-#define IoT_NAME   	 	  "SensorSEU_SBC01"
-#define IoT_NAME_CLONE    "SensorSEU_SBC00"
+#define IoT_NAME   	 	  "SensorSEU_PPB01"
+#define IoT_NAME_CLONE    "SensorSEU_PPB00"
 
 // seminario 6
 

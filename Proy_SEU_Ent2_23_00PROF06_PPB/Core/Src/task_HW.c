@@ -290,12 +290,4 @@ void pon_Nivel(uint8_t sensor_sel, uint32_t Hz){
 	}
 }
 
-float valor_sensor_LDR() {
-	return global_sensor_level[1];
-}
-
-float valor_sensor_NTC() {
-	return global_sensor_level[0];
-}
-
 

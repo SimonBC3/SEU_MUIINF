@@ -58,14 +58,17 @@ void Task_TIME( void *pvParameters ){
 			if (COMM_request.command==0){ //nada quiere nada
 				COMM_request.command=1;
 				COMM_request.result=0;
-				COMM_request.dst_port=80;
-				COMM_request.dst_address=(uint8_t *)"worldtimeapi.org";
-				COMM_request.HTTP_request=(uint8_t *)"GET /api/timezone/Europe/Madrid HTTP/1.1\r\n\r\n";
-
 				signal=0;
 			}
 		    xSemaphoreGive(COMM_xSem); // i’m going out critical section
 		}while(signal);
+
+		// now structure access is secure, nobody can rewrite it if flag command is 1
+
+		COMM_request.dst_port=80;
+		COMM_request.dst_address=(uint8_t *)"worldtimeapi.org";
+		COMM_request.HTTP_request=(uint8_t *)"GET /api/timezone/Europe/Madrid HTTP/1.1\r\n\r\n";
+
 
 
   		// Here you must parse json response in COMM_request.response item

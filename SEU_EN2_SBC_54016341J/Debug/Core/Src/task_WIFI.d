@@ -36,7 +36,11 @@ Core/Src/task_WIFI.o: ../Core/Src/task_WIFI.c ../Core/Inc/main.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h \
  ../Core/Inc/task_WIFI.h ../Core/Inc/main.h ../Core/Inc/task_WIFI.h \
- ../Core/Inc/tasks.h
+ ../Core/Inc/tasks.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
 ../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Core/Inc/stm32f4xx_hal_conf.h:
@@ -78,3 +82,7 @@ Core/Src/task_WIFI.o: ../Core/Src/task_WIFI.c ../Core/Inc/main.h \
 ../Core/Inc/main.h:
 ../Core/Inc/task_WIFI.h:
 ../Core/Inc/tasks.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/list.h:

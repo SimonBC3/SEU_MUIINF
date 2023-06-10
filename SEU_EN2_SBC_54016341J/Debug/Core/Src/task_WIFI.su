@@ -1,0 +1,4 @@
+../Core/Src/task_WIFI.c:16:6:WIFI_RESET	16	static
+../Core/Src/task_WIFI.c:35:6:WIFI_Boot	16	static
+../Core/Src/task_WIFI.c:95:5:checkWIFI	16	static
+../Core/Src/task_WIFI.c:111:11:ESP_Send_Request	32	static

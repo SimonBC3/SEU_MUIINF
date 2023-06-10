@@ -27,23 +27,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
  11 .ARM.attributes 00000030  00000000  00000000  000309cc  2**0
                   CONTENTS, READONLY
- 12 .debug_info   0001d602  00000000  00000000  000309fc  2**0
+ 12 .debug_info   0001d5d4  00000000  00000000  000309fc  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 13 .debug_abbrev 00004567  00000000  00000000  0004dffe  2**0
+ 13 .debug_abbrev 0000454d  00000000  00000000  0004dfd0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_aranges 000015a8  00000000  00000000  00052568  2**3
+ 14 .debug_aranges 00001598  00000000  00000000  00052520  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_ranges 00001488  00000000  00000000  00053b10  2**3
+ 15 .debug_ranges 00001478  00000000  00000000  00053ab8  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_macro  00007dde  00000000  00000000  00054f98  2**0
+ 16 .debug_macro  00007dde  00000000  00000000  00054f30  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   0001994c  00000000  00000000  0005cd76  2**0
+ 17 .debug_line   0001998d  00000000  00000000  0005cd0e  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    000a0a9d  00000000  00000000  000766c2  2**0
+ 18 .debug_str    000a0a10  00000000  00000000  0007669b  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000050  00000000  00000000  0011715f  2**0
+ 19 .comment      00000050  00000000  00000000  001170ab  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  0000717c  00000000  00000000  001171b0  2**2
+ 20 .debug_frame  0000713c  00000000  00000000  001170fc  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -1460,7 +1460,7 @@ static int case_insensitive_strcmp(const unsigned char *string1, const unsigned 
  80010f4:	46bd      	mov	sp, r7
  80010f6:	f85d 7b04 	ldr.w	r7, [sp], #4
  80010fa:	4770      	bx	lr
- 80010fc:	080106f0 	.word	0x080106f0
+ 80010fc:	080106ec 	.word	0x080106ec
 
 08001100 <cJSON_New_Item>:
     }
@@ -6116,6 +6116,8 @@ void CONFIGURACION_INICIAL(void){
  8002b2c:	e7fe      	b.n	8002b2c <CONFIGURACION_INICIAL+0x44>
 	}
 
+
+
 	res_task=xTaskCreate(Task_CONSOLE,"CONSOLA",2048,NULL,	NORMAL_PRIORITY,NULL);
  8002b2e:	2300      	movs	r3, #0
  8002b30:	9301      	str	r3, [sp, #4]
@@ -7826,7 +7828,7 @@ void Task_TIME( void *pvParameters ){
  800375e:	4b46      	ldr	r3, [pc, #280]	; (8003878 <Task_TIME+0x148>)
  8003760:	681b      	ldr	r3, [r3, #0]
  8003762:	2b00      	cmp	r3, #0
- 8003764:	d110      	bne.n	8003788 <Task_TIME+0x58>
+ 8003764:	d107      	bne.n	8003776 <Task_TIME+0x46>
 				COMM_request.command=1;
  8003766:	4b44      	ldr	r3, [pc, #272]	; (8003878 <Task_TIME+0x148>)
  8003768:	2201      	movs	r2, #1
@@ -7835,34 +7837,36 @@ void Task_TIME( void *pvParameters ){
  800376c:	4b42      	ldr	r3, [pc, #264]	; (8003878 <Task_TIME+0x148>)
  800376e:	2200      	movs	r2, #0
  8003770:	605a      	str	r2, [r3, #4]
-				COMM_request.dst_port=80;
- 8003772:	4b41      	ldr	r3, [pc, #260]	; (8003878 <Task_TIME+0x148>)
- 8003774:	2250      	movs	r2, #80	; 0x50
- 8003776:	609a      	str	r2, [r3, #8]
-				COMM_request.dst_address=(uint8_t *)"worldtimeapi.org";
- 8003778:	4b3f      	ldr	r3, [pc, #252]	; (8003878 <Task_TIME+0x148>)
- 800377a:	4a40      	ldr	r2, [pc, #256]	; (800387c <Task_TIME+0x14c>)
- 800377c:	60da      	str	r2, [r3, #12]
-				COMM_request.HTTP_request=(uint8_t *)"GET /api/timezone/Europe/Madrid HTTP/1.1\r\n\r\n";
- 800377e:	4b3e      	ldr	r3, [pc, #248]	; (8003878 <Task_TIME+0x148>)
- 8003780:	4a3f      	ldr	r2, [pc, #252]	; (8003880 <Task_TIME+0x150>)
- 8003782:	611a      	str	r2, [r3, #16]
-
 				signal=0;
- 8003784:	2300      	movs	r3, #0
- 8003786:	617b      	str	r3, [r7, #20]
+ 8003772:	2300      	movs	r3, #0
+ 8003774:	617b      	str	r3, [r7, #20]
 			}
 		    xSemaphoreGive(COMM_xSem); // i’m going out critical section
- 8003788:	4b39      	ldr	r3, [pc, #228]	; (8003870 <Task_TIME+0x140>)
- 800378a:	6818      	ldr	r0, [r3, #0]
- 800378c:	2300      	movs	r3, #0
- 800378e:	2200      	movs	r2, #0
- 8003790:	2100      	movs	r1, #0
- 8003792:	f003 fd91 	bl	80072b8 <xQueueGenericSend>
+ 8003776:	4b3e      	ldr	r3, [pc, #248]	; (8003870 <Task_TIME+0x140>)
+ 8003778:	6818      	ldr	r0, [r3, #0]
+ 800377a:	2300      	movs	r3, #0
+ 800377c:	2200      	movs	r2, #0
+ 800377e:	2100      	movs	r1, #0
+ 8003780:	f003 fd9a 	bl	80072b8 <xQueueGenericSend>
 		}while(signal);
- 8003796:	697b      	ldr	r3, [r7, #20]
- 8003798:	2b00      	cmp	r3, #0
- 800379a:	d1d1      	bne.n	8003740 <Task_TIME+0x10>
+ 8003784:	697b      	ldr	r3, [r7, #20]
+ 8003786:	2b00      	cmp	r3, #0
+ 8003788:	d1da      	bne.n	8003740 <Task_TIME+0x10>
+
+		// now structure access is secure, nobody can rewrite it if flag command is 1
+
+		COMM_request.dst_port=80;
+ 800378a:	4b3b      	ldr	r3, [pc, #236]	; (8003878 <Task_TIME+0x148>)
+ 800378c:	2250      	movs	r2, #80	; 0x50
+ 800378e:	609a      	str	r2, [r3, #8]
+		COMM_request.dst_address=(uint8_t *)"worldtimeapi.org";
+ 8003790:	4b39      	ldr	r3, [pc, #228]	; (8003878 <Task_TIME+0x148>)
+ 8003792:	4a3a      	ldr	r2, [pc, #232]	; (800387c <Task_TIME+0x14c>)
+ 8003794:	60da      	str	r2, [r3, #12]
+		COMM_request.HTTP_request=(uint8_t *)"GET /api/timezone/Europe/Madrid HTTP/1.1\r\n\r\n";
+ 8003796:	4b38      	ldr	r3, [pc, #224]	; (8003878 <Task_TIME+0x148>)
+ 8003798:	4a39      	ldr	r2, [pc, #228]	; (8003880 <Task_TIME+0x150>)
+ 800379a:	611a      	str	r2, [r3, #16]
 
 
   		// Here you must parse json response in COMM_request.response item
@@ -8370,7 +8374,7 @@ void WIFI_Boot(void)
  8003b24:	f002 faf9 	bl	800611a <HAL_UART_Receive_DMA>
 	HAL_UART_Transmit(&huart1,( unsigned char *) "AT+CWJAP=\"" SSID "\",\"" SSID_PASS "\"\r\n",strlen("AT+CWJAP=\"" SSID "\",\"" SSID_PASS "\"\r\n"),10000);
  8003b28:	f242 7310 	movw	r3, #10000	; 0x2710
- 8003b2c:	2224      	movs	r2, #36	; 0x24
+ 8003b2c:	2221      	movs	r2, #33	; 0x21
  8003b2e:	4914      	ldr	r1, [pc, #80]	; (8003b80 <WIFI_Boot+0x15c>)
  8003b30:	480a      	ldr	r0, [pc, #40]	; (8003b5c <WIFI_Boot+0x138>)
  8003b32:	f002 fa60 	bl	8005ff6 <HAL_UART_Transmit>
@@ -8406,7 +8410,7 @@ void WIFI_Boot(void)
  8003b78:	08010634 	.word	0x08010634
  8003b7c:	08010644 	.word	0x08010644
  8003b80:	0801064c 	.word	0x0801064c
- 8003b84:	08010674 	.word	0x08010674
+ 8003b84:	08010670 	.word	0x08010670
 
 08003b88 <ESP_Send_Request>:
 
@@ -8597,11 +8601,11 @@ uint8_t * ESP_Send_Request(uint8_t * dst_address, uint32_t dst_port, uint8_t * r
  8003ce6:	bd80      	pop	{r7, pc}
  8003ce8:	20000be8 	.word	0x20000be8
  8003cec:	20000a3c 	.word	0x20000a3c
- 8003cf0:	0801067c 	.word	0x0801067c
+ 8003cf0:	08010678 	.word	0x08010678
  8003cf4:	20001c64 	.word	0x20001c64
- 8003cf8:	08010698 	.word	0x08010698
+ 8003cf8:	08010694 	.word	0x08010694
  8003cfc:	20002464 	.word	0x20002464
- 8003d00:	080106a8 	.word	0x080106a8
+ 8003d00:	080106a4 	.word	0x080106a4
 
 08003d04 <BUFF_is_empty>:
 #include <stdlib.h>
@@ -9085,46 +9089,103 @@ BUFF_BUFFER_t * bufferCreat(int size){
  8003ff0:	08003d05 	.word	0x08003d05
 
 08003ff4 <Reset_Handler>:
+
+    .section  .text.Reset_Handler
+  .weak  Reset_Handler
+  .type  Reset_Handler, %function
+Reset_Handler:  
+  ldr   sp, =_estack    		 /* set stack pointer */
  8003ff4:	f8df d034 	ldr.w	sp, [pc, #52]	; 800402c <LoopFillZerobss+0x12>
+
+/* Copy the data segment initializers from flash to SRAM */  
+  ldr r0, =_sdata
  8003ff8:	480d      	ldr	r0, [pc, #52]	; (8004030 <LoopFillZerobss+0x16>)
+  ldr r1, =_edata
  8003ffa:	490e      	ldr	r1, [pc, #56]	; (8004034 <LoopFillZerobss+0x1a>)
+  ldr r2, =_sidata
  8003ffc:	4a0e      	ldr	r2, [pc, #56]	; (8004038 <LoopFillZerobss+0x1e>)
+  movs r3, #0
  8003ffe:	2300      	movs	r3, #0
+  b LoopCopyDataInit
  8004000:	e002      	b.n	8004008 <LoopCopyDataInit>
 
 08004002 <CopyDataInit>:
+
+CopyDataInit:
+  ldr r4, [r2, r3]
  8004002:	58d4      	ldr	r4, [r2, r3]
+  str r4, [r0, r3]
  8004004:	50c4      	str	r4, [r0, r3]
+  adds r3, r3, #4
  8004006:	3304      	adds	r3, #4
 
 08004008 <LoopCopyDataInit>:
+
+LoopCopyDataInit:
+  adds r4, r0, r3
  8004008:	18c4      	adds	r4, r0, r3
+  cmp r4, r1
  800400a:	428c      	cmp	r4, r1
+  bcc CopyDataInit
  800400c:	d3f9      	bcc.n	8004002 <CopyDataInit>
+  
+/* Zero fill the bss segment. */
+  ldr r2, =_sbss
  800400e:	4a0b      	ldr	r2, [pc, #44]	; (800403c <LoopFillZerobss+0x22>)
+  ldr r4, =_ebss
  8004010:	4c0b      	ldr	r4, [pc, #44]	; (8004040 <LoopFillZerobss+0x26>)
+  movs r3, #0
  8004012:	2300      	movs	r3, #0
+  b LoopFillZerobss
  8004014:	e001      	b.n	800401a <LoopFillZerobss>
 
 08004016 <FillZerobss>:
+
+FillZerobss:
+  str  r3, [r2]
  8004016:	6013      	str	r3, [r2, #0]
+  adds r2, r2, #4
  8004018:	3204      	adds	r2, #4
 
 0800401a <LoopFillZerobss>:
+
+LoopFillZerobss:
+  cmp r2, r4
  800401a:	42a2      	cmp	r2, r4
+  bcc FillZerobss
  800401c:	d3fb      	bcc.n	8004016 <FillZerobss>
+
+/* Call the clock system intitialization function.*/
+  bl  SystemInit   
  800401e:	f7fe fd51 	bl	8002ac4 <SystemInit>
+/* Call static constructors */
+    bl __libc_init_array
  8004022:	f006 f89b 	bl	800a15c <__libc_init_array>
+/* Call the application's entry point.*/
+  bl  main
  8004026:	f7fe f88f 	bl	8002148 <main>
+  bx  lr    
  800402a:	4770      	bx	lr
+  ldr   sp, =_estack    		 /* set stack pointer */
  800402c:	20020000 	.word	0x20020000
+  ldr r0, =_sdata
  8004030:	20000000 	.word	0x20000000
+  ldr r1, =_edata
  8004034:	200009cc 	.word	0x200009cc
+  ldr r2, =_sidata
  8004038:	08010b5c 	.word	0x08010b5c
+  ldr r2, =_sbss
  800403c:	200009d0 	.word	0x200009d0
+  ldr r4, =_ebss
  8004040:	20017ad0 	.word	0x20017ad0
 
 08004044 <ADC_IRQHandler>:
+ * @retval None       
+*/
+    .section  .text.Default_Handler,"ax",%progbits
+Default_Handler:
+Infinite_Loop:
+  b  Infinite_Loop
  8004044:	e7fe      	b.n	8004044 <ADC_IRQHandler>
 	...
 
@@ -12380,7 +12441,7 @@ static uint32_t DMA_CalcBaseAndBitshift(DMA_HandleTypeDef *hdma)
  80051bc:	4770      	bx	lr
  80051be:	bf00      	nop
  80051c0:	aaaaaaab 	.word	0xaaaaaaab
- 80051c4:	080106e8 	.word	0x080106e8
+ 80051c4:	080106e4 	.word	0x080106e4
 
 080051c8 <DMA_CheckFifoParam>:
   * @param  hdma       pointer to a DMA_HandleTypeDef structure that contains
@@ -14369,7 +14430,7 @@ HAL_StatusTypeDef HAL_RCC_ClockConfig(RCC_ClkInitTypeDef  *RCC_ClkInitStruct, ui
  8005cd2:	bf00      	nop
  8005cd4:	40023c00 	.word	0x40023c00
  8005cd8:	40023800 	.word	0x40023800
- 8005cdc:	080106d0 	.word	0x080106d0
+ 8005cdc:	080106cc 	.word	0x080106cc
  8005ce0:	2000000c 	.word	0x2000000c
  8005ce4:	20000010 	.word	0x20000010
 
@@ -14671,7 +14732,7 @@ uint32_t HAL_RCC_GetPCLK1Freq(void)
  8005f28:	4618      	mov	r0, r3
  8005f2a:	bd80      	pop	{r7, pc}
  8005f2c:	40023800 	.word	0x40023800
- 8005f30:	080106e0 	.word	0x080106e0
+ 8005f30:	080106dc 	.word	0x080106dc
 
 08005f34 <HAL_RCC_GetPCLK2Freq>:
   * @note   Each time PCLK2 changes, this function must be called to update the
@@ -14697,7 +14758,7 @@ uint32_t HAL_RCC_GetPCLK2Freq(void)
  8005f50:	4618      	mov	r0, r3
  8005f52:	bd80      	pop	{r7, pc}
  8005f54:	40023800 	.word	0x40023800
- 8005f58:	080106e0 	.word	0x080106e0
+ 8005f58:	080106dc 	.word	0x080106dc
 
 08005f5c <HAL_UART_Init>:
   * @param  huart  Pointer to a UART_HandleTypeDef structure that contains
@@ -20826,7 +20887,7 @@ BaseType_t xReturn;
  80081ba:	46bd      	mov	sp, r7
  80081bc:	bd80      	pop	{r7, pc}
  80081be:	bf00      	nop
- 80081c0:	080106b8 	.word	0x080106b8
+ 80081c0:	080106b4 	.word	0x080106b4
  80081c4:	08008805 	.word	0x08008805
  80081c8:	200040b8 	.word	0x200040b8
  80081cc:	20003bc0 	.word	0x20003bc0
@@ -23127,7 +23188,7 @@ BaseType_t xReturn = pdFAIL;
  8008df0:	46bd      	mov	sp, r7
  8008df2:	bd80      	pop	{r7, pc}
  8008df4:	200040f0 	.word	0x200040f0
- 8008df8:	080106c0 	.word	0x080106c0
+ 8008df8:	080106bc 	.word	0x080106bc
  8008dfc:	08008f39 	.word	0x08008f39
  8008e00:	200040f4 	.word	0x200040f4
 
@@ -24227,7 +24288,7 @@ static void prvCheckForValidListAndQueue( void )
  8009400:	200040ec 	.word	0x200040ec
  8009404:	2000419c 	.word	0x2000419c
  8009408:	200040fc 	.word	0x200040fc
- 800940c:	080106c8 	.word	0x080106c8
+ 800940c:	080106c4 	.word	0x080106c4
 
 08009410 <pxPortInitialiseStack>:
 
@@ -25921,7 +25982,7 @@ uint8_t *puc;
  8009e04:	6818      	ldr	r0, [r3, #0]
  8009e06:	f7ff bfcf 	b.w	8009da8 <_fflush_r>
  8009e0a:	bf00      	nop
- 8009e0c:	080107f4 	.word	0x080107f4
+ 8009e0c:	080107f0 	.word	0x080107f0
  8009e10:	08009da9 	.word	0x08009da9
  8009e14:	2000001c 	.word	0x2000001c
 
@@ -27727,7 +27788,7 @@ uint8_t *puc;
  800af46:	f04f 0c01 	mov.w	ip, #1
  800af4a:	e7f6      	b.n	800af3a <_strtod_l+0x28a>
  800af4c:	0801097c 	.word	0x0801097c
- 800af50:	080107f8 	.word	0x080107f8
+ 800af50:	080107f4 	.word	0x080107f4
  800af54:	7ff00000 	.word	0x7ff00000
  800af58:	9a17      	ldr	r2, [sp, #92]	; 0x5c
  800af5a:	1c51      	adds	r1, r2, #1
@@ -28017,7 +28078,7 @@ uint8_t *puc;
  800b23c:	e786      	b.n	800b14c <_strtod_l+0x49c>
  800b23e:	bf00      	nop
  800b240:	08010855 	.word	0x08010855
- 800b244:	0801080c 	.word	0x0801080c
+ 800b244:	08010808 	.word	0x08010808
  800b248:	0801084d 	.word	0x0801084d
  800b24c:	080108a3 	.word	0x080108a3
  800b250:	08010b27 	.word	0x08010b27
@@ -34366,7 +34427,7 @@ uint8_t *puc;
  800f0ec:	f7fb f85d 	bl	800a1aa <__retarget_lock_release_recursive>
  800f0f0:	2000      	movs	r0, #0
  800f0f2:	e7df      	b.n	800f0b4 <__register_exitproc+0x3c>
- 800f0f4:	080107f4 	.word	0x080107f4
+ 800f0f4:	080107f0 	.word	0x080107f0
  800f0f8:	20000858 	.word	0x20000858
 
 0800f0fc <__assert_func>:

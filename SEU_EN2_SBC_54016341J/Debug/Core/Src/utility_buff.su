@@ -1,0 +1,8 @@
+../Core/Src/utility_buff.c:7:10:BUFF_is_empty	16	static
+../Core/Src/utility_buff.c:11:10:BUFF_is_full	16	static
+../Core/Src/utility_buff.c:15:10:BUFF_inserta	16	static
+../Core/Src/utility_buff.c:25:10:BUFF_extrae	16	static
+../Core/Src/utility_buff.c:37:10:BUFF_extrae_prot	24	static
+../Core/Src/utility_buff.c:53:10:BUFF_inserta_prot	24	static
+../Core/Src/utility_buff.c:70:10:BUFF_inserta_cad	32	static
+../Core/Src/utility_buff.c:105:17:bufferCreat	24	static

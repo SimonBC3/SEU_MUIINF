@@ -1,0 +1,66 @@
+/*
+ * tasks.c
+ *
+ *  Created on: May 17, 2023
+ *      Author: sbrot
+ */
+
+#include "tasks.h"
+#include "HW.h"
+#include "task_WRITE.h"
+#include "semphr.h"
+
+SemaphoreHandle_t WIFI_xSem = NULL;
+
+void Task_HW( void *pvParameters ) {
+	for(;;)
+	  {
+		//runHW();
+	    osDelay(1);
+	  }
+}
+void Task_WIFI( void *pvParameters ) {
+	WIFI_xSem = xSemaphoreCreateMutex();
+	WIFI_Boot();
+	for(;;)
+	  {
+		printf("starting wifi");
+		int wifi = checkWIFI();
+		printf("wifi int = %d\n\r", wifi);
+		if(wifi = 0) {
+			WIFI_Boot();
+		}
+		osDelay(1);
+	  }
+}
+void Task_WRITE( void *pvParameters ) {
+	for(;;)
+	  {
+		WRITE();
+	    osDelay(1);
+	  }
+}
+void Task_Receive( void *pvParameters ) {
+	for(;;)
+	  {
+	    osDelay(1);
+	  }
+}
+
+void CONFIGURACION_INICIAL(void){
+ BaseType_t res_task;
+ res_task=xTaskCreate(Task_HW,"HW",1024,NULL,NORMAL_PRIORITY,NULL);
+ 		if( res_task != pdPASS ){
+ 				printf("PANIC: Error al crear Tarea Visualizador\r\n");
+ 				fflush(NULL);
+ 				while(1);
+ 		}
+
+ res_task=xTaskCreate(Task_WIFI,"WIFI",1024,NULL,NORMAL_PRIORITY ,NULL);
+ 			if( res_task != pdPASS ){
+ 					printf("PANIC: Error al crear Tarea Visualizador\r\n");
+ 					fflush(NULL);
+ 					while(1);
+ 			}
+
+}

@@ -1,0 +1,8 @@
+#ifndef INC_TASK_WRITE_H_
+#define INC_TASK_WRITE_H_
+
+extern uint32_t global_time_it;
+
+void WRITE( void *pvParameters );
+
+#endif

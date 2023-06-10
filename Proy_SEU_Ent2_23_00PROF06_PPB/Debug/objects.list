@@ -13,7 +13,6 @@
 "./Core/Src/task_HW.o"
 "./Core/Src/task_TIME.o"
 "./Core/Src/task_WIFI.o"
-"./Core/Src/task_WRITE.o"
 "./Core/Src/utility_buff.o"
 "./Core/Startup/startup_stm32f411retx.o"
 "./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o"

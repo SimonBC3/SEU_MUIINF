@@ -1,36 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="SBC"/>
+		<item key="selection" value="sem"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="SBC"/>
-			<item value="P"/>
-			<item value="Proj"/>
-			<item value="cj"/>
-			<item value="float aux"/>
-			<item value="global_sensor_level[0]="/>
-			<item value="valueAD"/>
+			<item value="sem"/>
+			<item value="COMM_xSem"/>
+			<item value="COMM"/>
+			<item value="xSem"/>
+			<item value="wifi in"/>
+			<item value="Sem"/>
+			<item value="xS"/>
+			<item value="osD"/>
+			<item value="Give"/>
+			<item value="global"/>
+			<item value="global_"/>
+			<item value="bprintf"/>
 			<item value="GOT"/>
-			<item value="IP"/>
-			<item value="CONFIGURACION"/>
-			<item value="CONFIGURACION "/>
-			<item value="CONF"/>
-			<item value="task_"/>
-			<item value="task_HW"/>
-			<item value="task_WIFI"/>
+			<item value="bfprintf"/>
+			<item value="buff_recv"/>
 		</list>
 		<list key="replacehistory">
+			<item value="printf"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="1535"/>
-		<item key="DIALOG_Y_ORIGIN" value="194"/>
-		<item key="DIALOG_WIDTH" value="336"/>
+		<item key="DIALOG_X_ORIGIN" value="1476"/>
+		<item key="DIALOG_Y_ORIGIN" value="189"/>
+		<item key="DIALOG_WIDTH" value="389"/>
 		<item key="DIALOG_HEIGHT" value="454"/>
 		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
 	</section>

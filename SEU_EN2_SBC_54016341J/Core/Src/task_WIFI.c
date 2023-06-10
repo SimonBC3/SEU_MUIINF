@@ -5,30 +5,30 @@
 #include <stdio.h>
 #include <string.h>
 #include "tasks.h"
+#include "semphr.h"
 
 uint32_t global_wifi_it;
 uint32_t global_wifi_ready;
 
- uint8_t aux_buff_WIFI[2048];
- uint8_t buff_WIFI_response[2048];
-
-
+uint8_t aux_buff_WIFI[2048];
+uint8_t buff_WIFI_response[2048];
 
 void WIFI_RESET(void){
 	// RESET
 	unsigned int ct;
-	 HAL_GPIO_WritePin(ESP8266_RESET_GPIO_Port, ESP8266_RESET_Pin, GPIO_PIN_RESET);
-	 for (ct=0;ct<1000000;ct++);
-	 HAL_UART_Init(&huart1);
-	 for (ct=0;ct<2048;ct++) buff_recv[ct]=0;
-	 HAL_UART_Receive_DMA(&huart1, buff_recv,2048);
+	uint32_t global_wifi_ready = 0;
+	HAL_GPIO_WritePin(ESP8266_RESET_GPIO_Port, ESP8266_RESET_Pin, GPIO_PIN_RESET);
+	for (ct=0;ct<1000000;ct++);
+	HAL_UART_Init(&huart1);
+	for (ct=0;ct<2048;ct++) buff_recv[ct]=0;
+	HAL_UART_Receive_DMA(&huart1, buff_recv,2048);
 
-	 HAL_GPIO_WritePin(ESP8266_RESET_GPIO_Port, ESP8266_RESET_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(ESP8266_RESET_GPIO_Port, ESP8266_RESET_Pin, GPIO_PIN_SET);
 
-	 vTaskDelay(1000/portTICK_RATE_MS );
-   	 HAL_UART_DMAStop(&huart1);
-	 printf("XXXXX %s",buff_recv);
-	 printf("XXXXX\r\n\n\n\n");
+	vTaskDelay(1000/portTICK_RATE_MS );
+   	HAL_UART_DMAStop(&huart1);
+	printf("XXXXX %s",buff_recv);
+	printf("XXXXX\r\n\n\n\n");
 }
 
 
@@ -89,6 +89,7 @@ void WIFI_Boot(void)
 	HAL_UART_DMAStop(&huart1);
 	printf("5: %s",buff_recv);*/
 
+	global_wifi_ready = 1;
 }
 
 int checkWIFI() {
@@ -96,7 +97,7 @@ int checkWIFI() {
 	for (ct=0;ct<2048;ct++) buff_recv[ct]=0;
 	HAL_UART_Receive_DMA(&huart1, buff_recv,2048);
 	HAL_UART_Transmit(&huart1, ( unsigned char *)"AT+CIFSR\r\n",strlen("AT+CIFSR\r\n"),10000);
-	vTaskDelay(5000/portTICK_RATE_MS );
+	vTaskDelay(2000/portTICK_RATE_MS );
 	HAL_UART_DMAStop(&huart1);
 	printf("5: %s",buff_recv);
 

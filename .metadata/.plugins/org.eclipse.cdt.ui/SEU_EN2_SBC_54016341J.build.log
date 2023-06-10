@@ -1,54 +1,21 @@
-19:15:33 **** Incremental Build of configuration Debug for project SEU_EN2_SBC_54016341J ****
+10:58:47 **** Incremental Build of configuration Debug for project SEU_EN2_SBC_54016341J ****
 make -j16 all 
-arm-none-eabi-gcc "../Core/Src/tasks.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG '-DPASCU_PRJ="SEU_EN2_SBC_54016341J.elf"' -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/tasks.d" -MT"Core/Src/tasks.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/tasks.o"
-../Core/Src/tasks.c: In function 'Task_HW':
-../Core/Src/tasks.c:16:6: warning: implicit declaration of function 'osDelay' [-Wimplicit-function-declaration]
-   16 |      osDelay(1);
-      |      ^~~~~~~
-../Core/Src/tasks.c: In function 'Task_WIFI':
-../Core/Src/tasks.c:20:2: warning: implicit declaration of function 'WIFI_Boot' [-Wimplicit-function-declaration]
-   20 |  WIFI_Boot();
-      |  ^~~~~~~~~
-../Core/Src/tasks.c:23:3: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
-   23 |   printf("starting wifi");
-      |   ^~~~~~
-../Core/Src/tasks.c:23:3: warning: incompatible implicit declaration of built-in function 'printf'
-../Core/Src/tasks.c:10:1: note: include '<stdio.h>' or provide a declaration of 'printf'
-    9 | #include "HW.h"
-  +++ |+#include <stdio.h>
-   10 | 
-../Core/Src/tasks.c:24:14: warning: implicit declaration of function 'checkWIFI' [-Wimplicit-function-declaration]
-   24 |   int wifi = checkWIFI();
-      |              ^~~~~~~~~
-../Core/Src/tasks.c:26:6: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
-   26 |   if(wifi = 0) {
-      |      ^~~~
-../Core/Src/tasks.c: In function 'CONFIGURACION_INICIAL':
-../Core/Src/tasks.c:47:11: warning: implicit declaration of function 'xTaskCreate' [-Wimplicit-function-declaration]
-   47 |  res_task=xTaskCreate(Task_HW,"HW",1024,NULL,NORMAL_PRIORITY,NULL);
-      |           ^~~~~~~~~~~
-../Core/Src/tasks.c:49:6: warning: incompatible implicit declaration of built-in function 'printf'
-   49 |      printf("PANIC: Error al crear Tarea Visualizador\r\n");
-      |      ^~~~~~
-../Core/Src/tasks.c:49:6: note: include '<stdio.h>' or provide a declaration of 'printf'
-../Core/Src/tasks.c:50:6: warning: implicit declaration of function 'fflush' [-Wimplicit-function-declaration]
-   50 |      fflush(NULL);
-      |      ^~~~~~
-../Core/Src/tasks.c:56:7: warning: incompatible implicit declaration of built-in function 'printf'
-   56 |       printf("PANIC: Error al crear Tarea Visualizador\r\n");
-      |       ^~~~~~
-../Core/Src/tasks.c:56:7: note: include '<stdio.h>' or provide a declaration of 'printf'
+arm-none-eabi-gcc "../Core/Src/task_WIFI.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG '-DPASCU_PRJ="SEU_EN2_SBC_54016341J.elf"' -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/task_WIFI.d" -MT"Core/Src/task_WIFI.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/task_WIFI.o"
+../Core/Src/task_WIFI.c: In function 'WIFI_RESET':
+../Core/Src/task_WIFI.c:19:11: warning: unused variable 'global_wifi_ready' [-Wunused-variable]
+   19 |  uint32_t global_wifi_ready = 0;
+      |           ^~~~~~~~~~~~~~~~~
 arm-none-eabi-gcc -o "SEU_EN2_SBC_54016341J.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\sbrot\STM32CubeIDE\workspace_1.8.0\SEU_EN2_SBC_54016341J\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SEU_EN2_SBC_54016341J.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: SEU_EN2_SBC_54016341J.elf
  
 arm-none-eabi-size   SEU_EN2_SBC_54016341J.elf 
 arm-none-eabi-objdump -h -S  SEU_EN2_SBC_54016341J.elf  > "SEU_EN2_SBC_54016341J.list"
    text	   data	    bss	    dec	    hex	filename
-  44548	    488	  87736	 132772	  206a4	SEU_EN2_SBC_54016341J.elf
+  56832	    504	  89832	 147168	  23ee0	SEU_EN2_SBC_54016341J.elf
 Finished building: default.size.stdout
  
 Finished building: SEU_EN2_SBC_54016341J.list
  
 
-19:15:34 Build Finished. 0 errors, 10 warnings. (took 1s.87ms)
+10:58:48 Build Finished. 0 errors, 1 warnings. (took 1s.140ms)
 

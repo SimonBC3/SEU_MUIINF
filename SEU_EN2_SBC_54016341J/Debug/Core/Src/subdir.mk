@@ -6,6 +6,8 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../Core/Src/HW.c \
+../Core/Src/cJSON.c \
+../Core/Src/cJSON_Utils.c \
 ../Core/Src/comunicaciones.c \
 ../Core/Src/freertos.c \
 ../Core/Src/main.c \
@@ -14,11 +16,19 @@ C_SRCS += \
 ../Core/Src/syscalls.c \
 ../Core/Src/sysmem.c \
 ../Core/Src/system_stm32f4xx.c \
+../Core/Src/task_COMM.c \
+../Core/Src/task_CONSOLE.c \
+../Core/Src/task_RECIEVE.c \
+../Core/Src/task_TIME.c \
 ../Core/Src/task_WIFI.c \
-../Core/Src/tasks.c 
+../Core/Src/task_WRITE.c \
+../Core/Src/tasks.c \
+../Core/Src/utility_buff.c 
 
 OBJS += \
 ./Core/Src/HW.o \
+./Core/Src/cJSON.o \
+./Core/Src/cJSON_Utils.o \
 ./Core/Src/comunicaciones.o \
 ./Core/Src/freertos.o \
 ./Core/Src/main.o \
@@ -27,11 +37,19 @@ OBJS += \
 ./Core/Src/syscalls.o \
 ./Core/Src/sysmem.o \
 ./Core/Src/system_stm32f4xx.o \
+./Core/Src/task_COMM.o \
+./Core/Src/task_CONSOLE.o \
+./Core/Src/task_RECIEVE.o \
+./Core/Src/task_TIME.o \
 ./Core/Src/task_WIFI.o \
-./Core/Src/tasks.o 
+./Core/Src/task_WRITE.o \
+./Core/Src/tasks.o \
+./Core/Src/utility_buff.o 
 
 C_DEPS += \
 ./Core/Src/HW.d \
+./Core/Src/cJSON.d \
+./Core/Src/cJSON_Utils.d \
 ./Core/Src/comunicaciones.d \
 ./Core/Src/freertos.d \
 ./Core/Src/main.d \
@@ -40,8 +58,14 @@ C_DEPS += \
 ./Core/Src/syscalls.d \
 ./Core/Src/sysmem.d \
 ./Core/Src/system_stm32f4xx.d \
+./Core/Src/task_COMM.d \
+./Core/Src/task_CONSOLE.d \
+./Core/Src/task_RECIEVE.d \
+./Core/Src/task_TIME.d \
 ./Core/Src/task_WIFI.d \
-./Core/Src/tasks.d 
+./Core/Src/task_WRITE.d \
+./Core/Src/tasks.d \
+./Core/Src/utility_buff.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -51,7 +75,7 @@ Core/Src/%.o Core/Src/%.su Core/Src/%.cyclo: ../Core/Src/%.c Core/Src/subdir.mk
 clean: clean-Core-2f-Src
 
 clean-Core-2f-Src:
-	-$(RM) ./Core/Src/HW.cyclo ./Core/Src/HW.d ./Core/Src/HW.o ./Core/Src/HW.su ./Core/Src/comunicaciones.cyclo ./Core/Src/comunicaciones.d ./Core/Src/comunicaciones.o ./Core/Src/comunicaciones.su ./Core/Src/freertos.cyclo ./Core/Src/freertos.d ./Core/Src/freertos.o ./Core/Src/freertos.su ./Core/Src/main.cyclo ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/main.su ./Core/Src/stm32f4xx_hal_msp.cyclo ./Core/Src/stm32f4xx_hal_msp.d ./Core/Src/stm32f4xx_hal_msp.o ./Core/Src/stm32f4xx_hal_msp.su ./Core/Src/stm32f4xx_it.cyclo ./Core/Src/stm32f4xx_it.d ./Core/Src/stm32f4xx_it.o ./Core/Src/stm32f4xx_it.su ./Core/Src/syscalls.cyclo ./Core/Src/syscalls.d ./Core/Src/syscalls.o ./Core/Src/syscalls.su ./Core/Src/sysmem.cyclo ./Core/Src/sysmem.d ./Core/Src/sysmem.o ./Core/Src/sysmem.su ./Core/Src/system_stm32f4xx.cyclo ./Core/Src/system_stm32f4xx.d ./Core/Src/system_stm32f4xx.o ./Core/Src/system_stm32f4xx.su ./Core/Src/task_WIFI.cyclo ./Core/Src/task_WIFI.d ./Core/Src/task_WIFI.o ./Core/Src/task_WIFI.su ./Core/Src/tasks.cyclo ./Core/Src/tasks.d ./Core/Src/tasks.o ./Core/Src/tasks.su
+	-$(RM) ./Core/Src/HW.cyclo ./Core/Src/HW.d ./Core/Src/HW.o ./Core/Src/HW.su ./Core/Src/cJSON.cyclo ./Core/Src/cJSON.d ./Core/Src/cJSON.o ./Core/Src/cJSON.su ./Core/Src/cJSON_Utils.cyclo ./Core/Src/cJSON_Utils.d ./Core/Src/cJSON_Utils.o ./Core/Src/cJSON_Utils.su ./Core/Src/comunicaciones.cyclo ./Core/Src/comunicaciones.d ./Core/Src/comunicaciones.o ./Core/Src/comunicaciones.su ./Core/Src/freertos.cyclo ./Core/Src/freertos.d ./Core/Src/freertos.o ./Core/Src/freertos.su ./Core/Src/main.cyclo ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/main.su ./Core/Src/stm32f4xx_hal_msp.cyclo ./Core/Src/stm32f4xx_hal_msp.d ./Core/Src/stm32f4xx_hal_msp.o ./Core/Src/stm32f4xx_hal_msp.su ./Core/Src/stm32f4xx_it.cyclo ./Core/Src/stm32f4xx_it.d ./Core/Src/stm32f4xx_it.o ./Core/Src/stm32f4xx_it.su ./Core/Src/syscalls.cyclo ./Core/Src/syscalls.d ./Core/Src/syscalls.o ./Core/Src/syscalls.su ./Core/Src/sysmem.cyclo ./Core/Src/sysmem.d ./Core/Src/sysmem.o ./Core/Src/sysmem.su ./Core/Src/system_stm32f4xx.cyclo ./Core/Src/system_stm32f4xx.d ./Core/Src/system_stm32f4xx.o ./Core/Src/system_stm32f4xx.su ./Core/Src/task_COMM.cyclo ./Core/Src/task_COMM.d ./Core/Src/task_COMM.o ./Core/Src/task_COMM.su ./Core/Src/task_CONSOLE.cyclo ./Core/Src/task_CONSOLE.d ./Core/Src/task_CONSOLE.o ./Core/Src/task_CONSOLE.su ./Core/Src/task_RECIEVE.cyclo ./Core/Src/task_RECIEVE.d ./Core/Src/task_RECIEVE.o ./Core/Src/task_RECIEVE.su ./Core/Src/task_TIME.cyclo ./Core/Src/task_TIME.d ./Core/Src/task_TIME.o ./Core/Src/task_TIME.su ./Core/Src/task_WIFI.cyclo ./Core/Src/task_WIFI.d ./Core/Src/task_WIFI.o ./Core/Src/task_WIFI.su ./Core/Src/task_WRITE.cyclo ./Core/Src/task_WRITE.d ./Core/Src/task_WRITE.o ./Core/Src/task_WRITE.su ./Core/Src/tasks.cyclo ./Core/Src/tasks.d ./Core/Src/tasks.o ./Core/Src/tasks.su ./Core/Src/utility_buff.cyclo ./Core/Src/utility_buff.d ./Core/Src/utility_buff.o ./Core/Src/utility_buff.su
 
 .PHONY: clean-Core-2f-Src
 

@@ -18,13 +18,12 @@ extern UART_HandleTypeDef huart1;
 
 extern uint8_t buff_recv[2048];
 
-
 // WIFI
 //#define SSID			  "routerSEU"
 //#define SSID_PASS		  "00000000"
 
-#define SSID			  "routerSEU"
-#define SSID_PASS		  "00000000"
+#define SSID			  "MiFibra-70DB"
+#define SSID_PASS		  "QSetep44"
 
 //#define SSID			  ""
 //#define SSID_PASS		  ""

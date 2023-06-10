@@ -1,0 +1,4 @@
+../Core/Src/task_CONSOLE.c:23:6:Task_CONSOLE	24	static
+../Core/Src/task_CONSOLE.c:45:6:print_bufferln	24	static
+../Core/Src/task_CONSOLE.c:54:6:print_buffer	24	static
+../Core/Src/task_CONSOLE.c:65:6:bprintf	24	static

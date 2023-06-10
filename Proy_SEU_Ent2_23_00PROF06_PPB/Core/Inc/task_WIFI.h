@@ -20,14 +20,16 @@ extern uint8_t buff_recv[2048];
 
 
 // WIFI
-//#define SSID			  "routerSEU"
-//#define SSID_PASS		  "00000000"
+#define SSID			  "routerSEU"
+#define SSID_PASS		  "00000000"
+//#define SSID			  "Pascual"
+//#define SSID_PASS		  "12345678z"
 
-#define SSID			  "MiFibra-70DB"
-#define SSID_PASS		  "QSetep44"
+//#define SSID			  "Caloret"
+//#define SSID_PASS		  "12345678z"
 
-//#define SSID			  ""
-//#define SSID_PASS		  ""
+//#define SSID			  "DIGIFIBRA-sGYS"
+//#define SSID_PASS		  "bftNcKQF7x"
 
 
 extern uint32_t global_wifi_ready;

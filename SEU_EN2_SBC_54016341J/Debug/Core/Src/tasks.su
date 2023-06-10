@@ -1,5 +1,5 @@
-../Core/Src/tasks.c:12:6:Task_HW	16	static
-../Core/Src/tasks.c:19:6:Task_WIFI	24	static
-../Core/Src/tasks.c:32:6:Task_Send	16	static
-../Core/Src/tasks.c:38:6:Task_Receive	16	static
-../Core/Src/tasks.c:45:6:CONFIGURACION_INICIAL	24	static
+../Core/Src/tasks.c:16:6:Task_HW	16	static
+../Core/Src/tasks.c:23:6:Task_WIFI	24	static
+../Core/Src/tasks.c:38:6:Task_WRITE	8	static
+../Core/Src/tasks.c:47:6:Task_Receive	16	static
+../Core/Src/tasks.c:54:6:CONFIGURACION_INICIAL	24	static
