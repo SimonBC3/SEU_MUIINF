@@ -1,8 +1,0 @@
-#ifndef INC_TASK_TIME_H_
-#define INC_TASK_TIME_H_
-
-extern int global_time_it;
-
-void WRITE( void *pvParameters );
-
-#endif

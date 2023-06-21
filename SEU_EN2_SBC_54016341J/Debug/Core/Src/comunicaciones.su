@@ -1,3 +1,6 @@
 ../Core/Src/comunicaciones.c:13:5:_write	32	static
 ../Core/Src/comunicaciones.c:27:6:ESP8266_RESET	16	static
 ../Core/Src/comunicaciones.c:56:6:ESP8266_Boot	72	static
+../Core/Src/comunicaciones.c:160:2:config_WIFI	16	static
+../Core/Src/comunicaciones.c:214:5:checkIP	2064	static
+../Core/Src/comunicaciones.c:232:6:sendHTTP	72	static

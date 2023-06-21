@@ -1,0 +1,3 @@
+task_WRITE.c:23:6:write	4
+task_WRITE.c:70:6:get_char_by_sensor	2
+task_WRITE.c:78:6:get_alarm_char	2

@@ -1,0 +1,4 @@
+../Core/Src/task_MODE.c:6:6:test_mode	40	static
+../Core/Src/task_MODE.c:20:6:led_check	8	static
+../Core/Src/task_MODE.c:54:6:pip	8	static
+../Core/Src/task_MODE.c:60:6:get_button_value	16	static

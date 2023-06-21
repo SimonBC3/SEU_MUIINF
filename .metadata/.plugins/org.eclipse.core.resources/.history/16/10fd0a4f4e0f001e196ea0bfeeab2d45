@@ -1,0 +1,132 @@
+/*
+ * tasks.c
+ *
+ *  Created on: May 17, 2023
+ *      Author: sbrot
+ */
+
+#include "tasks.h"
+#include "HW.h"
+#include "task_WRITE.h"
+#include "task_WIFI.h"
+#include "semphr.h"
+
+SemaphoreHandle_t BROKER_xSem = NULL;
+int state = 0; // 0 Conected | 1 clon | 2 test
+
+void Task_HW( void *pvParameters ) {
+	for(;;)
+	  {
+		runHW();
+	    osDelay(10000);
+	  }
+}
+void Task_WIFI( void *pvParameters ) {
+	WIFI_Boot();
+	printf("\n\nboot done \n\n\r");
+	for(;;)
+	  {
+		osDelay(1);
+	  }
+}
+
+void Task_WRITE() {
+	for(;;) {
+		if(global_wifi_ready == 0) {
+			printf("\n\n wifi not ready \n\n\r");
+		} else {
+			printf("write wifi ready");
+			xSemaphoreTake(BROKER_xSem, 10000/portTICK_RATE_MS);
+			write();
+			xSemaphoreGive(BROKER_xSem);
+		}
+		osDelay(10000);
+	}
+}
+
+void Task_READ( void *pvParameters ) {
+	for(;;)
+	  {
+		if(global_wifi_ready == 0) {
+					printf("\n\n wifi not ready \n\n\r");
+		} else {
+			printf("read wifi ready");
+			xSemaphoreTake(BROKER_xSem, 10000/portTICK_RATE_MS);
+			read();
+			xSemaphoreGive(BROKER_xSem);
+		}
+	    osDelay(10000);
+	  }
+}
+
+void Task_MODE( void *pvParameters ) {
+	for(;;) {
+		GPIO_PinState rbCurrentState = HAL_GPIO_ReadPin(PULSADOR1_GPIO_Port, PULSADOR1_Pin);
+		char alarmChar = getAlarmChar();
+		if (rightButtonState != rbCurrentState && rbCurrentState == GPIO_PIN_RESET && alarmChar == 'F') {
+			if (state == 2) {
+				state = 0;
+			} else {
+				state++;
+			}
+			rightButtonState = GPIO_PIN_RESET;
+		}
+		if(rightButtonState != rbCurrentState && rbCurrentState == GPIO_PIN_SET && alarmChar == 'F') {
+			rightButtonState = GPIO_PIN_SET;
+		}
+
+		//conected mode
+			//create and destroy tasks?
+
+		//clon mode
+			//create and destroy tasks?
+			//change assign variable
+			//assign values
+
+		//test mode
+			//bip bop bip
+
+		osDelay(10000);
+	}
+}
+
+void CONFIGURACION_INICIAL(void){
+ BaseType_t res_task;
+ BROKER_xSem = xSemaphoreCreateMutex();
+ xSemaphoreGive(BROKER_xSem);
+
+ /*res_task=xTaskCreate(Task_HW,"HW",2048,NULL,NORMAL_PRIORITY,NULL);
+ 		if( res_task != pdPASS ){
+ 				printf("PANIC: Error al crear Tarea Visualizador\r\n");
+ 				fflush(NULL);
+ 				while(1);
+ 		}*/
+
+ res_task=xTaskCreate(Task_WIFI,"WIFI",1024,NULL,NORMAL_PRIORITY ,NULL);
+ 			if( res_task != pdPASS ){
+ 					printf("PANIC: Error al crear Tarea Visualizador\r\n");
+ 					fflush(NULL);
+ 					while(1);
+ 			}
+
+ res_task=xTaskCreate( Task_WRITE,"WRITE",1024,NULL,	NORMAL_PRIORITY,NULL);
+ 	 	 	if( res_task != pdPASS ){
+ 					bprintf("PANIC: Error al crear Tarea TIME\r\n");
+ 					fflush(NULL);
+ 					while(1);
+ 				}
+
+ res_task=xTaskCreate( Task_READ,"READ",1024,NULL,	NORMAL_PRIORITY,NULL);
+ 	 	 	if( res_task != pdPASS ){
+  					bprintf("PANIC: Error al crear Tarea TIME\r\n");
+  					fflush(NULL);
+  					while(1);
+  				}
+
+ res_task=xTaskCreate( Task_MODE,"MODE",512,NULL,	NORMAL_PRIORITY,NULL);
+  	 	 	if( res_task != pdPASS ){
+  	 	 			bprintf("PANIC: Error al crear Tarea TIME\r\n");
+ 	 	 	  		fflush(NULL);
+ 	 	 	  		while(1);
+ 	 	 	  	}
+}

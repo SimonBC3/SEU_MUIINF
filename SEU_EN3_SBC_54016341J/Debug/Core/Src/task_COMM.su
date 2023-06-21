@@ -1,0 +1,3 @@
+../Core/Src/task_COMM.c:27:6:Task_COMM_init	24	static
+../Core/Src/task_COMM.c:47:6:Task_COMM	32	static
+../Core/Src/task_COMM.c:101:6:cleanResponse	40	static

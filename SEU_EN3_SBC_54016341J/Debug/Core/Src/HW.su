@@ -1,0 +1,9 @@
+../Core/Src/HW.c:24:6:put_leds	16	static
+../Core/Src/HW.c:67:6:pot_leds	16	static
+../Core/Src/HW.c:99:10:ConvertidorA_D	40	static
+../Core/Src/HW.c:132:5:checkSensorChange	16	static
+../Core/Src/HW.c:156:6:setOffAlarm	16	static
+../Core/Src/HW.c:169:6:turnOnLedsLight	24	static
+../Core/Src/HW.c:206:6:turnOnLedsTemp	24	static
+../Core/Src/HW.c:243:6:restartAlarm	16	static
+../Core/Src/HW.c:261:6:runHW	80	static

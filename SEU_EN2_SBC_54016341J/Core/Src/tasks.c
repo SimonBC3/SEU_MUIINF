@@ -7,71 +7,158 @@
 
 #include "tasks.h"
 #include "HW.h"
-#include "task_WRITE.h"
-#include "task_WIFI.h"
 #include "semphr.h"
 
-SemaphoreHandle_t WIFI_xSem = NULL;
+static SemaphoreHandle_t xSemIP = NULL;
+
+int ip_status;
+
+GPIO_PinState leftButtonState = GPIO_PIN_SET;
+GPIO_PinState rightButtonState = GPIO_PIN_SET;
+int sensorValue = 0; // 0 = LDR || 1 = NTC
+uint32_t valuePot = 0;
+float lastPot = 0;
+uint32_t tempInit = 0;
+float initTempValue = 0;
+float trigger = 0;
 
 void Task_HW( void *pvParameters ) {
 	for(;;)
 	  {
-		//runHW();
+		printf('in HW');
+		//runHW(); refactor pending
+
+		//Choose sensor
+		GPIO_PinState lbCurrentState = HAL_GPIO_ReadPin(PULSADOR2_GPIO_Port, PULSADOR2_Pin);
+		if(leftButtonState != lbCurrentState && lbCurrentState == GPIO_PIN_RESET) {
+		leftButtonState = GPIO_PIN_RESET;
+		 }
+
+		if(leftButtonState != lbCurrentState && lbCurrentState == GPIO_PIN_SET) {
+			leftButtonState = GPIO_PIN_SET;
+			if (sensorValue == 0) {
+				printf("changing to NTC\r\n");
+				sensorValue = 1;
+			} else {
+				 printf("changing to LDR\r\n");
+				 sensorValue = 0;
+			}
+			 }
+
+
+
+			 //LIGHT SENSOR
+			 if (sensorValue == 0) {
+				 uint32_t valueADLum = ConvertidorA_D(0);
+				 float valueBigLum = 4096-valueADLum;
+				 float lumValue = (valueBigLum*3.3)/4095;
+				 printf("Value de la luz %.2f \r\n", lumValue);
+				 turnOnLedsLight(lumValue);
+
+				 //set trigger
+				 uint32_t valuePot = ConvertidorA_D(4);
+				 float currentPot = ((valuePot * 3.3)/4095.0);
+				 printf("Value del pot %.2f \r\n", currentPot);
+				 if (currentPot > (lastPot+0.35) || currentPot < (lastPot - 0.35)) {
+					 printf("pot changed %.2f\r\n", currentPot);
+					 lastPot = currentPot;
+				 	 trigger = currentPot;
+				 	 for(int i = 0; i<8;i++) {
+				 		turnOnLedsLight(currentPot);
+				 		 for (int j = 0; j < 1000000; j++) {}
+				 		 put_leds(0);
+				 		 for (int j = 0; j < 1000000; j++) {}
+				 	 }
+				 	}
+				 setOffAlarm(lumValue, trigger);
+			 }
+
+			 //TEMP SENSOR
+		 	 if (sensorValue == 1) {
+		 		uint32_t valueADTemp = ConvertidorA_D(1);
+		 		float valueBigTemp = 4096-valueADTemp;
+		 		float tempValue = (valueBigTemp*3.3)/4095;
+		 		//float resis = ((3.3*10000)/((3.3-valueBigTemp)/(4095*3.3)))-10000;
+		 		printf("Value de la temp %.2f \r\n Value init temp %.2f \n", tempValue, initTempValue);
+		 		//printf("Value de la resis %.2f \r\n", resis);
+		 		turnOnLedsTemp(initTempValue, tempValue);
+
+		 		//adjust leds maxvalue - minvalue and set leds according to the currentValue
+		 		setOffAlarm(tempValue, trigger);
+		 	 }
+
+			 //SCREAM
+			 /*if (lumValue > trigger ) {
+			 	HAL_GPIO_WritePin(GPIOA, BUZZER_Pin, GPIO_PIN_SET);
+			 } else {
+			 	HAL_GPIO_WritePin(GPIOA, BUZZER_Pin, GPIO_PIN_RESET);
+			 }*/
+
+			 //RESET SCREAM
+			 GPIO_PinState rbCurrentState = HAL_GPIO_ReadPin(PULSADOR1_GPIO_Port, PULSADOR1_Pin);
+			 if(rightButtonState != rbCurrentState && rbCurrentState== GPIO_PIN_RESET) {
+			 	rightButtonState = GPIO_PIN_RESET;
+			 	HAL_GPIO_WritePin(GPIOA, BUZZER_Pin, GPIO_PIN_RESET);
+			 	for (int j = 0; j < 70000000; j++) {}
+			 }
+
+			 if(rightButtonState != rbCurrentState && rbCurrentState == GPIO_PIN_SET) {
+			 	rightButtonState = GPIO_PIN_SET;
+			 }
+
 	    osDelay(1);
 	  }
 }
 void Task_WIFI( void *pvParameters ) {
-	WIFI_Boot();
-	printf("\n\nboot done \n\n\r");
 	for(;;)
 	  {
-		printf("checking wifi\n\n\r");
-		int wifi = checkWIFI();
-		printf("wifi int = %d\n\r", wifi);
-		if(wifi = 0) {
-			WIFI_Boot();
+		xSemaphoreTake(xSemIP,100000);
+		int ip_status = checkIP();
+		{int c;for (c = 0; c < 10000000; c++);}
+		if (ip_status == 0) {
+			config_WIFI();
+		} else {
+			xSemaphoreGive(xSemIP);
 		}
-		osDelay(1);
+	    osDelay(1000);
 	  }
 }
+void Task_Send( void *pvParameters ) {
+	for(;;)
+	  {
+		sendHTTP();
+	    osDelay(10000);
 
-void Task_WRITE() {
-	while(global_wifi_ready == 0) {
-		printf("\n\n wifi not ready \n\n\r");
-		osDelay(5000);
-	}
-	printf("wifi ready");
-	WRITE();
+	  }
 }
-
 void Task_Receive( void *pvParameters ) {
 	for(;;)
 	  {
-	    osDelay(1);
+	    osDelay(1000);
 	  }
 }
 
 void CONFIGURACION_INICIAL(void){
  BaseType_t res_task;
- res_task=xTaskCreate(Task_HW,"HW",2048,NULL,NORMAL_PRIORITY,NULL);
+ res_task=xTaskCreate(Task_HW,"HW",1024,NULL,NORMAL_PRIORITY,NULL);
  		if( res_task != pdPASS ){
- 				printf("PANIC: Error al crear Tarea Visualizador\r\n");
+ 				printf("PANIC: Error al crear Tarea HW\r\n");
  				fflush(NULL);
  				while(1);
  		}
 
- res_task=xTaskCreate(Task_WIFI,"WIFI",2048,NULL,NORMAL_PRIORITY ,NULL);
+ res_task=xTaskCreate(Task_WIFI,"WIFI",1024,NULL,NORMAL_PRIORITY ,NULL);
  			if( res_task != pdPASS ){
- 					printf("PANIC: Error al crear Tarea Visualizador\r\n");
+ 					printf("PANIC: Error al crear Tarea WIFI\r\n");
  					fflush(NULL);
  					while(1);
  			}
 
- res_task=xTaskCreate( Task_WRITE,"WRITE",2048,NULL,	NORMAL_PRIORITY,NULL);
- 	 	 	if( res_task != pdPASS ){
- 					bprintf("PANIC: Error al crear Tarea TIME\r\n");
- 					fflush(NULL);
- 					while(1);
- 				}
+ res_task=xTaskCreate(Task_Send,"SEND",1024,NULL,NORMAL_PRIORITY ,NULL);
+ 			 if( res_task != pdPASS ){
+ 				 printf("PANIC: Error al crear Tarea SEND\r\n");
+ 				 fflush(NULL);
+ 				 while(1);
+ 			 }
 
 }

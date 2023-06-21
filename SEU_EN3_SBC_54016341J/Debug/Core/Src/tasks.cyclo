@@ -1,0 +1,6 @@
+tasks.c:19:6:Task_HW	1
+tasks.c:26:6:Task_WIFI	1
+tasks.c:35:6:Task_WRITE	3
+tasks.c:55:6:Task_READ	3
+tasks.c:77:6:Task_MODE	11
+tasks.c:115:6:CONFIGURACION_INICIAL	6

@@ -1,0 +1,57 @@
+#include "main.h";
+#include "HW.h";
+
+void test_mode() {
+
+	//barrido leds
+	barrido_leds();
+	//BIP
+	pip();
+	//Valores T,L,P
+	print_sensors();
+	//Valores buttons
+
+	//Enviar AT
+}
+
+
+void barrido_leds() {
+	HAL_GPIO_WritePin(GPIOB, LED1_Pin, GPIO_PIN_SET);
+	osDelay(500);
+	HAL_GPIO_WritePin(GPIOB, LED1_Pin, GPIO_PIN_RESET);
+
+	HAL_GPIO_WritePin(GPIOB, LED2_Pin, GPIO_PIN_SET);
+	osDelay(500);
+	HAL_GPIO_WritePin(GPIOB, LED2_Pin, GPIO_PIN_RESET);
+
+	HAL_GPIO_WritePin(GPIOA, LED3_Pin, GPIO_PIN_SET);
+	osDelay(500);
+	HAL_GPIO_WritePin(GPIOA, LED3_Pin, GPIO_PIN_RESET);
+
+	HAL_GPIO_WritePin(GPIOB, LED4_Pin, GPIO_PIN_SET);
+	osDelay(500);
+	HAL_GPIO_WritePin(GPIOB, LED4_Pin, GPIO_PIN_RESET);
+
+	HAL_GPIO_WritePin(GPIOB, LED5_Pin, GPIO_PIN_SET);
+	osDelay(500);
+	HAL_GPIO_WritePin(GPIOB, LED5_Pin, GPIO_PIN_RESET);
+
+
+	HAL_GPIO_WritePin(LED6_GPIO_Port, LED6_Pin, GPIO_PIN_SET);
+	osDelay(500);
+	HAL_GPIO_WritePin(LED6_GPIO_Port, LED6_Pin, GPIO_PIN_RESET);
+
+	HAL_GPIO_WritePin(GPIOB, LED7_Pin, GPIO_PIN_SET);
+	osDelay(500);
+	HAL_GPIO_WritePin(GPIOB, LED7_Pin, GPIO_PIN_RESET);
+
+	HAL_GPIO_WritePin(GPIOA, LED8_Pin, GPIO_PIN_SET);
+	osDelay(500);
+	HAL_GPIO_WritePin(GPIOA, LED8_Pin, GPIO_PIN_RESET);
+}
+
+void pip() {
+	HAL_GPIO_WritePin(GPIOA, BUZZER_Pin, GPIO_PIN_SET);
+	osDelay(500);
+	HAL_GPIO_WritePin(GPIOA, BUZZER_Pin, GPIO_PIN_RESET);
+}

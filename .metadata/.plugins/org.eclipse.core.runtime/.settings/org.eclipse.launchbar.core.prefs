@@ -1,7 +1,7 @@
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
-configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Proy_SEU_Ent2_23_00PROF06_PPB Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Proy_SEU_IoT22_00PROF05 Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Proy_SEU_IoT_00PROF03bis42 Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Proy_SEU_S5_23_00PROF06_PPB Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:SEU_EN2_SBC_54016341J Debug
+configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Proy_SEU_IoT22_00PROF05 Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Proy_SEU_IoT_00PROF03bis42 Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Proy_SEU_S5_23_00PROF06_PPB Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Proy_SEU_Ent2_23_00PROF06_PPB Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Proy_SEU_S6_23_00PROF06_PPB2,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Proy_SEU_IoT22_00PROF06 Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:SEU_EN3_SBC_54016341J Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:SEU_EN3_SBC_54016341J Debug (2),org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:SEU_EN3_SBC_54016341J Debug (1)
 eclipse.preferences.version=1
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Proy_SEU_Ent2_23_00PROF06_PPB\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Proy_SEU_Ent2_23_00PROF06_PPB\ Debug/activeLaunchTarget=null\:---
@@ -10,6 +10,8 @@ org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Proy_SEU_IoT22_00PROF05\ Debug/
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:SEU_EN1_SBC_54016341J\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:SEU_EN1_SBC_54016341J\ Debug/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:SEU_EN2_SBC_54016341J\ Debug/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:SEU_EN3_SBC_54016341J\ Debug\ (1)/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:SEU_EN3_SBC_54016341J\ Debug\ (2)/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:SEU_PR1_54016341J_SBC\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:SEU_PR1_54016341J_SBC\ Debug/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:SEU_PR2_54016341J_SBC\ Debug/activeLaunchMode=run

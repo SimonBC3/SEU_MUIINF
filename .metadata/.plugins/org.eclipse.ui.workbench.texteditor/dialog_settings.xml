@@ -1,30 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="sem"/>
+		<item key="selection" value="leftButtonLastState"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="sem"/>
-			<item value="COMM_xSem"/>
-			<item value="COMM"/>
-			<item value="xSem"/>
-			<item value="wifi in"/>
-			<item value="Sem"/>
-			<item value="xS"/>
-			<item value="osD"/>
-			<item value="Give"/>
-			<item value="global"/>
-			<item value="global_"/>
-			<item value="bprintf"/>
-			<item value="GOT"/>
-			<item value="bfprintf"/>
-			<item value="buff_recv"/>
+			<item value="leftButtonState"/>
+			<item value="rightButtonState"/>
+			<item value="CONN"/>
+			<item value="C"/>
+			<item value="restartAlarm"/>
+			<item value="tempVa"/>
+			<item value="tempV"/>
+			<item value="initializeVars"/>
+			<item value="potVa"/>
+			<item value="lightSensor"/>
+			<item value="tempSensor"/>
+			<item value="tempValue"/>
+			<item value="temp"/>
+			<item value="Temp"/>
+			<item value="tempVal"/>
 		</list>
 		<list key="replacehistory">
+			<item value="leftButtonLastState"/>
 			<item value="printf"/>
 		</list>
 	</section>

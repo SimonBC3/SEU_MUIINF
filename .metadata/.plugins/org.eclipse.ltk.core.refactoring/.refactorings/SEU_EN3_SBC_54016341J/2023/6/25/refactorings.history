@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;SEU_EN3_SBC_54016341J/Core/Src/task_MODE&apos; to &apos;task_MODE.c&apos;" description="Rename resource &apos;task_MODE&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Core/Src/task_MODE" name="task_MODE.c" stamp="1687252489481" updateReferences="true"/>
+</session>

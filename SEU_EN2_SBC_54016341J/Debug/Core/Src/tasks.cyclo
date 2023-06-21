@@ -1,5 +1,5 @@
-tasks.c:16:6:Task_HW	1
-tasks.c:23:6:Task_WIFI	2
-tasks.c:38:6:Task_WRITE	2
-tasks.c:47:6:Task_Receive	1
-tasks.c:54:6:CONFIGURACION_INICIAL	4
+tasks.c:25:6:Task_HW	18
+tasks.c:112:6:Task_WIFI	3
+tasks.c:126:6:Task_Send	1
+tasks.c:135:6:Task_Receive	1
+tasks.c:142:6:CONFIGURACION_INICIAL	4

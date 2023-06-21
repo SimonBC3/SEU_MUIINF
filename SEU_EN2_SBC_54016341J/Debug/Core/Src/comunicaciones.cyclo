@@ -1,3 +1,6 @@
 comunicaciones.c:13:5:_write	2
 comunicaciones.c:27:6:ESP8266_RESET	4
 comunicaciones.c:56:6:ESP8266_Boot	17
+comunicaciones.c:160:2:config_WIFI	9
+comunicaciones.c:214:5:checkIP	4
+comunicaciones.c:232:6:sendHTTP	5

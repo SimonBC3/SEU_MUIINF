@@ -1,0 +1,6 @@
+../Core/Src/tasks.c:19:6:Task_HW	16	static
+../Core/Src/tasks.c:26:6:Task_WIFI	16	static
+../Core/Src/tasks.c:35:6:Task_WRITE	8	static
+../Core/Src/tasks.c:55:6:Task_READ	16	static
+../Core/Src/tasks.c:77:6:Task_MODE	24	static
+../Core/Src/tasks.c:115:6:CONFIGURACION_INICIAL	24	static

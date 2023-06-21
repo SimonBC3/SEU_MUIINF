@@ -1,8 +1,0 @@
-#ifndef INC_TASK_WRITE_H_
-#define INC_TASK_WRITE_H_
-
-uint32_t global_time_it;
-
-void WRITE(void);
-
-#endif

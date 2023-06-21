@@ -1,0 +1,9 @@
+HW.c:24:6:put_leds	10
+HW.c:67:6:pot_leds	8
+HW.c:99:10:ConvertidorA_D	5
+HW.c:132:5:checkSensorChange	6
+HW.c:156:6:setOffAlarm	2
+HW.c:169:6:turnOnLedsLight	8
+HW.c:206:6:turnOnLedsTemp	8
+HW.c:243:6:restartAlarm	6
+HW.c:261:6:runHW	19

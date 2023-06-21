@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;SEU_EN2_SBC_54016341J&apos; to &apos;SEU_EN3_SBC_54016341J&apos;" description="Rename resource &apos;SEU_EN2_SBC_54016341J&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/SEU_EN2_SBC_54016341J" name="SEU_EN3_SBC_54016341J" stamp="1686929051872" updateReferences="true"/>
+</session>

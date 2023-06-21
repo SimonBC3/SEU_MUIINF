@@ -64,8 +64,8 @@ all: main-build
 main-build: Proy_SEU_Ent2_23_00PROF06_PPB.elf secondary-outputs
 
 # Tool invocations
-Proy_SEU_Ent2_23_00PROF06_PPB.elf Proy_SEU_Ent2_23_00PROF06_PPB.map: $(OBJS) $(USER_OBJS) C:\Users\pperez.UPVNET\STM32CubeIDE\workspace_1.11.0_B\Proy_SEU_Ent2_23_00PROF06_PPB\STM32F411RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Proy_SEU_Ent2_23_00PROF06_PPB.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\pperez.UPVNET\STM32CubeIDE\workspace_1.11.0_B\Proy_SEU_Ent2_23_00PROF06_PPB\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Proy_SEU_Ent2_23_00PROF06_PPB.map" -Wl,--gc-sections -static  -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Proy_SEU_Ent2_23_00PROF06_PPB.elf Proy_SEU_Ent2_23_00PROF06_PPB.map: $(OBJS) $(USER_OBJS) C:\Users\sbrot\STM32CubeIDE\workspace_1.8.0\Proy_SEU_Ent2_23_00PROF06_PPB\STM32F411RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Proy_SEU_Ent2_23_00PROF06_PPB.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\sbrot\STM32CubeIDE\workspace_1.8.0\Proy_SEU_Ent2_23_00PROF06_PPB\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Proy_SEU_Ent2_23_00PROF06_PPB.map" -Wl,--gc-sections -static  -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

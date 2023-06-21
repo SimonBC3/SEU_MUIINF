@@ -1,0 +1,90 @@
+	#include <stdint.h>
+#include "task_COMM.h"
+#include "FreeRTOS.h"
+#include <stdio.h>
+#include "cmsis_os.h"
+#include <stdlib.h>
+#include "semphr.h"
+#include "tasks.h"
+#include <stdio.h>
+#include "cmsis_os.h"
+#include <stdlib.h>
+
+#include "semphr.h"
+#include <string.h>
+
+#include <task.h>
+#include "task_CONSOLE.h"
+#include "task_READ.h"
+#include "task_WRITE.h"
+#include "task_TIME.h"
+#include "cJSON.h"
+
+void read() {
+
+	printf("READ\r\n");
+	int signal;
+	CJSON_PUBLIC(cJSON *) responseJson;
+
+	char json[500];
+	char jsonTemplate[] = "{\"entities\":[{\"type\":\"Sensor\",\"isPattern\":\"false\",\"id\":\"%s\"}]}\r\n";
+	sprintf(json, jsonTemplate, sensorName);
+
+	char request[500];
+	char requestTemplate[] = "POST /v1/queryContext HTTP/1.1\r\nContent-Type: application/json\r\nAccept: application/json\r\nContent-Length: %lu\r\n\r\n %s";
+	sprintf(request, requestTemplate, strlen(json), json);
+	bprintf("%s", request);
+
+	signal = 1;
+	do {
+		if (COMM_request.command==0){ //nada quiere nada
+			COMM_request.command=1;
+			COMM_request.result=0;
+			COMM_request.dst_port=1026;
+			COMM_request.dst_address=(uint8_t *)"pperez-seu-or.disca.upv.es";
+			COMM_request.HTTP_request=(uint8_t *) request;
+			signal=0;
+		}
+	}
+	while(signal);
+
+	COMM_request.HTTP_response = ESP_Send_Request(COMM_request.dst_address, COMM_request.dst_port, COMM_request.HTTP_request);
+
+	while(COMM_request.result==0);
+
+	cleanResponse(COMM_request.HTTP_response, strlen(COMM_request.HTTP_response));
+
+	bprintf("\n\r CLEAN JSON %s\n\r", COMM_request.HTTP_response);
+	responseJson = cJSON_Parse((const char *) COMM_request.HTTP_response);
+	if(responseJson == NULL) {
+		bprintf("Error parsing JSON.\n");
+	}
+
+	bprintf("RESPONSE JSON %s\r\n", (const char *) responseJson);
+
+	cJSON_Delete(json);
+
+	COMM_request.command=0;
+	COMM_request.result=0;
+
+	vTaskDelay(10/portTICK_RATE_MS );
+	global_time_it++;
+}
+
+void extractValues(cJSON* json) {
+    if (cJSON_IsObject(json)) {
+        cJSON* child = NULL;
+        cJSON_ArrayForEach(child, json) {
+            extractValues(child);
+        }
+    } else if (cJSON_IsArray(json)) {
+        int i = 0;
+        int size = cJSON_GetArraySize(json);
+        for (i = 0; i < size; i++) {
+            cJSON* child = cJSON_GetArrayItem(json, i);
+            extractValues(child);
+        }
+    } else if (cJSON_IsString(json)) {
+        printf("Value: %s\n", json->valuestring);
+    }
+}

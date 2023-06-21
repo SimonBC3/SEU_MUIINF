@@ -1,0 +1,61 @@
+#include "main.h";
+#include "HW.h";
+#include "comunicaciones.h";
+
+void test_mode() {
+	//barrido leds
+	led_check();
+	//BIP
+	pip();
+	//Valores T,L,P
+	printf("Temp %f, Light %f, Pot %f\n\r", tempValue, lumValue, (float) potValue);
+	//Valores buttons
+	get_btn_value();
+	printf("Value btn1 %s, Value btn2 %s\n\r", HAL_GPIO_ReadPin(PULSADOR1_GPIO_Port, PULSADOR1_Pin), HAL_GPIO_ReadPin(PULSADOR2_GPIO_Port, PULSADOR2_Pin));
+	//Enviar AT
+	checkWIFI();
+}
+
+void led_check() {
+	HAL_GPIO_WritePin(GPIOB, LED1_Pin, GPIO_PIN_SET);
+	osDelay(250);
+	HAL_GPIO_WritePin(GPIOB, LED1_Pin, GPIO_PIN_RESET);
+
+	HAL_GPIO_WritePin(GPIOB, LED2_Pin, GPIO_PIN_SET);
+	osDelay(250);
+	HAL_GPIO_WritePin(GPIOB, LED2_Pin, GPIO_PIN_RESET);
+
+	HAL_GPIO_WritePin(GPIOA, LED3_Pin, GPIO_PIN_SET);
+	osDelay(250);
+	HAL_GPIO_WritePin(GPIOA, LED3_Pin, GPIO_PIN_RESET);
+
+	HAL_GPIO_WritePin(GPIOB, LED4_Pin, GPIO_PIN_SET);
+	osDelay(250);
+	HAL_GPIO_WritePin(GPIOB, LED4_Pin, GPIO_PIN_RESET);
+
+	HAL_GPIO_WritePin(GPIOB, LED5_Pin, GPIO_PIN_SET);
+	osDelay(250);
+	HAL_GPIO_WritePin(GPIOB, LED5_Pin, GPIO_PIN_RESET);
+
+	HAL_GPIO_WritePin(LED6_GPIO_Port, LED6_Pin, GPIO_PIN_SET);
+	osDelay(250);
+	HAL_GPIO_WritePin(LED6_GPIO_Port, LED6_Pin, GPIO_PIN_RESET);
+
+	HAL_GPIO_WritePin(GPIOB, LED7_Pin, GPIO_PIN_SET);
+	osDelay(250);
+	HAL_GPIO_WritePin(GPIOB, LED7_Pin, GPIO_PIN_RESET);
+
+	HAL_GPIO_WritePin(GPIOA, LED8_Pin, GPIO_PIN_SET);
+	osDelay(250);
+	HAL_GPIO_WritePin(GPIOA, LED8_Pin, GPIO_PIN_RESET);
+}
+
+void pip() {
+	HAL_GPIO_WritePin(GPIOA, BUZZER_Pin, GPIO_PIN_SET);
+	osDelay(300);
+	HAL_GPIO_WritePin(GPIOA, BUZZER_Pin, GPIO_PIN_RESET);
+}
+
+void get_button_value(GPIO_PinState pinState) {
+
+}

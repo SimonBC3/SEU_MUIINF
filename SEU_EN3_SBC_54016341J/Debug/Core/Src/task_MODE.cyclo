@@ -1,0 +1,4 @@
+task_MODE.c:6:6:test_mode	1
+task_MODE.c:20:6:led_check	1
+task_MODE.c:54:6:pip	1
+task_MODE.c:60:6:get_button_value	2
